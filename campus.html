@@ -11,49 +11,69 @@
 </head>
 <body>  
   
-<div class="header">
-  <!--bms logo-->
-  <a href="./index.html">
-  <img src="./images/trans_bms_info.png" alt="BMSCE" id="college_logo">
-  </a>
-  <!--top right profile photo-->
-  <a href="./profile.html">
-  <img src="./images/trans_profile_img-removebg-preview.png" alt="PROFILE_PHOTO" id="profile_photo"> 
-  </a>
+<!--header container-->
+<div class="header" id="header">
 
-  <div class="navbar">
+    <!--bms logo-->
+    <a href="./index.html">
+        <img src="./images/trans_bms_info.png" alt="BMSCE" id="college_logo">
+    </a>
 
+    <!--top right profile photo-->
+    <a href="./profile.html">
+        <img src="./images/trans_profile_img-removebg-preview.png" alt="PROFILE_PHOTO" id="profile_photo">
+    </a>
 
-      <span class="ho"><a href="./index.html">Home</a></span>
-      <span  class="ni"><a href="./campus.html">Campus</a></span>  
-      
-      <div class="dropdown">
-      
-          <span class="ji"><button class="dropbtn">Exams
-              <i class="fa fa-caret-down"></i>
-          </button></span> 
-      
-      
-      
-          <div class="dropdown-content">
-              <span class="hoo"><a href="form1.html">REGULAR</a></li></span>
-              <span class="joo"><a href="form1.html">RE-REGISTER</a></li></span>
-              <span class="poo"><a href="form_fast.html">FAST TRACK</a></span>
-              <span class="ioo"><a href="https://gate.iitkgp.ac.in/">GATE</a></span>
-              <span class="loo"><a href="https://iimcat.ac.in/per/g01/pub/756/ASM/WebPortal/1/index.html?756@@1@@1">CAT</a></span>
-          </div>
-      
-      
-      </div> 
-      
-      
-      <span class="oop"><a href="./results.html">Results</a></span>
-      <a href="./login.html" style="float: right;">Login</a>
-  
-  </div>
+    <!--Navbar container-->
+    <div class="navbar">
+
+        <!--Navbar content-->
+        <span class="ho"><a href="./index.html">Home</a></span>
+        <span class="ni"><a href="./campus.html">Campus</a></span>
+
+        <!--dropdown container-->
+        <div class="dropdown">
+
+            <!--dropdown button-->
+            <span class="ji">
+                <button class="dropbtn">
+                    Exams
+                    <i class="fa fa-caret-down"></i>
+                </button>
+            </span>
+
+            <!--dropdown content-->
+            <div class="dropdown-content">
+                <span class="hoo"><a href="form1.html">REGULAR</a></li></span>
+                <span class="joo"><a href="form1.html">RE-REGISTER</a></li></span>
+                <span class="poo"><a href="form_fast.html">FAST TRACK</a></span>
+                <span class="ioo"><a href="https://gate.iitkgp.ac.in/" target="_blank">GATE</a></span>
+                <span class="loo">
+                    <a href="https://iimcat.ac.in/per/g01/pub/756/ASM/WebPortal/1/index.html?756@@1@@1"
+                        target="_blank">CAT</a>
+                </span>
+
+                <!--dropdown content end-->
+            </div>
+
+            <!--dropdown container end-->
+        </div>
+
+        <span class="oop">
+            <a href="./results.html">Results</a>
+        </span>
+        <a href="./login.html" style="float: right;">Login</a>
+
+        <!--Navbar container end-->
+    </div>
+
+    <!--header container end-->
 </div>
 
+<!--unnecessary Images container-->
 <div class="high">
+
+    <!--Images container-->
     <div class="container">  
             <img src="./images/bms.jpg" alt="BMS" class="img1" data-aos="fade-up" data-aos-duration="1000">
             <img src="./images/classroom-21.jpg" alt="" class="img2"  data-aos="fade-up" data-aos-duration="1000">
@@ -71,8 +91,13 @@
             <img src="./images/ps-21_octavious.jpg"  data-aos="fade-up" data-aos-duration="1000"alt=""class="img17">
             <img src="./images/college_balcony.jpg"  data-aos="fade-up" data-aos-duration="1000"alt=""class="img18">
     </div>
+
 </div>
+
+<!--Appear on scroll JS import-->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<!--Appear on scroll JS implementation-->
 <script>
   AOS.init();
 </script>
