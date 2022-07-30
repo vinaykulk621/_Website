@@ -1,0 +1,144 @@
+/* _____________overall background color of page start */
+body{
+  background-image: linear-gradient(to left, rgba(216, 219, 226, 0.541), rgb(84, 133, 197));
+}
+  /* overall background color of page end */ 
+  #login_box_heading{
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-bottom: 8px;
+    padding-top: 2px;
+    text-align: left;
+  }
+  /*login to website text deco end*/
+  /* ________________login box start*/
+  div.login_box{
+    border:0px solid  rgb(0, 0, 0);
+    padding: 25px;
+    width: 230px;
+    height: 490px;
+    background: linear-gradient(
+      to bottom left,#97a5f7 0%,#58bceb 100%);
+    box-shadow: 0px 3px 5px 0px grey ;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    transition: all 0.5s ease;
+  }
+  /*login box end*/  
+  /* ________________login box animation start*/
+  div.login_box:hover{
+    border:0px solid  rgb(10, 10, 10);
+    border-radius: 5px; 
+    box-shadow:  20px 20px 47px #757575,-20px -20px 47px #89bce9; 
+  }
+  /* login box animation end*/
+  /* ________________username deco start*/
+  .username,.email{
+    font-style:normal;
+    font-size: 38px;
+    font-variant: small-caps;
+    font-weight:normal;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom : 20px;
+  }
+  .usn{
+    font-style:normal;
+    font-size: 38px;
+    font-variant: small-caps;
+    font-weight:normal;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom : 20px;
+   
+  }
+  /* username deco end*/
+  /* ________________username input place deco start*/
+  #username,#email{
+    border : 0px solid grey;
+    padding: 10px ;
+    width: 215px;
+    border-radius: 4px;
+  }
+
+  #usn{
+    border : 0px solid grey;
+    padding: 10px ;
+    width: 215px;
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+  /*_________________password deco start*/
+  .password{
+    font-size: 38px;
+    font-style:initial;
+    font-variant: small-caps;
+    font-weight:normal;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom : 20px;
+    margin-top: 5px;
+  }
+  /*_________________password deco start*/
+ input[type=password]:focus {
+  background-color: rgb(236, 241, 243);
+  transition: all 0.5s ease;
+  }
+   /*password deco end*/
+  /*_________________username deco start*/
+ input[type=text]:focus {
+  background-color: rgb(236, 241, 243);
+  transition: all 0.5s ease;
+}
+ /*username deco end*/
+  /* ________________password input place deco start*/
+  #password{
+    border : 0px solid grey;
+    padding: 10px;
+    width: 215px ;
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
+  /* password input place deco end*/
+  /* _________________submit button deco start*/
+  .button{
+    border: 0px rgb(202, 220, 235);
+    padding: 8px 92px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 0px 3px 5px 0px grey ;
+    border-radius: 4px;
+    background-color:rgb(95, 150, 223);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transform: translatey(30px);
+  }
+  /* submit button deco end*/
+  /* _________________submit button animation start*/
+ .button:hover{
+   box-shadow: 0px 4px 8px 0px  rgba(0, 0, 0, 0.2),0px 6px 20px 0px rgba(0, 0, 0, 0.19);
+  }
+  /* submit button animation end*/
+  a:active{
+  color: black; 
+  }
+  /* _________________BMSCE animation start*/
+  p{
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+   font-size: 30px; 
+   margin-top: 0px; 
+   margin-bottom: 0px; 
+   padding-top: 2px; 
+   padding-left: 50px;
+  }
+  /*BMSCE animation end*/
+  #logo{
+    padding-bottom: 15px;
+  }
+  /*________________login to website text deco start*/

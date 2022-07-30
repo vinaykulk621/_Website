@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/1200px-BMS_College_of_Engineering.svg.png">
+    <link rel="stylesheet" href="./CSS/accepted.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>BMSCE</title>
+</head>
+<body>
+    
+<div class="header">
+    <!--bms logo-->
+    <a href="./index.html">
+    <img src="./images/trans_bms_info.png" alt="BMSCE" id="college_logo">
+    </a>
+    <!--top right profile photo-->
+    <a href="./profile.html">
+    <img src="./images/trans_profile_img-removebg-preview.png" alt="PROFILE_PHOTO" id="profile_photo"> 
+    </a>
+    <div class="navbar">
+        <span class="ho"><a href="./index.html">Home</a></span>
+        <span  class="ni"><a href="./campus.html">Campus</a></span>  
+        <div class="dropdown">
+            <span class="ji"><button class="dropbtn">Exams
+            </button></span>         
+            <div class="dropdown-content">
+                <span class="hoo"><a href="form1.html">REGULAR</a></li></span>
+                <span class="joo"><a href="form1.html">RE-REGISTER</a></li></span>
+                <span class="poo"><a href="form_fast.html">FAST TRACK</a></span>
+                <span class="ioo"><a href="https://gate.iitkgp.ac.in/">GATE</a></span>
+                <span class="loo"><a href="https://iimcat.ac.in/per/g01/pub/756/ASM/WebPortal/1/index.html?756@@1@@1">CAT</a></span>
+            </div>       
+        </div>         
+        <span class="oop"><a href="./results.html">Results</a></span>
+        <a href="./login.html" style="float: right;">Login</a>
+    </div>
+</div>
+
+
+<div id="page">
+    <h1 class="accept">Review Form</h1>
+    <div id="info"></div>
+    <script>
+            const result = document.getElementById('info')
+            new URLSearchParams(window.location.search).forEach((value,
+            name) => {
+            result.append(`${name}: ${value}`)
+            result.append(document.createElement('br'))
+        })
+    </script>
+</div>
+<div>
+    <a href="./form3.html" id="next">Next page</a>
+</div>
+<div>
+    <a href="./profile.html" id="profile">Profile</a>
+    <a href="./index.html" id="home">Home</a>
+    <a href="./form1.html" id="another">Submit another form</a>
+</div>
+</body>
+</html>

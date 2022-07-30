@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/1200px-BMS_College_of_Engineering.svg.png">
+    <link rel="stylesheet" href="./CSS/home.css">
+    <link rel="stylesheet" href="./CSS/form.css">
+    <title>BMSCE</title>
+</head>
+<body>
+   
+<div class="header">
+    <!--bms logo-->
+    <a href="./index.html">
+    <img src="./images/trans_bms_info.png" alt="BMSCE" id="college_logo">
+    </a>
+    <!--top right profile photo-->
+    <a href="./profile.html">
+    <img src="./images/trans_profile_img-removebg-preview.png" alt="PROFILE_PHOTO" id="profile_photo"> 
+    </a>
+
+
+
+    <div class="navbar">
+
+
+        <span class="ho"><a href="./index.html">Home</a></span>
+        <span  class="ni"><a href="./campus.html">Campus</a></span>  
+        
+        <div class="dropdown">
+        
+            <span class="ji"><button class="dropbtn">Exams
+                <i class="fa fa-caret-down"></i>
+            </button></span> 
+        
+        
+        
+            <div class="dropdown-content">
+                <span class="hoo"><a href="form1.html">REGULAR</a></li></span>
+                <span class="joo"><a href="form1.html">RE-REGISTER</a></li></span>
+                <span class="poo"><a href="form_fast.html">FAST TRACK</a></span>
+                <span class="ioo"><a href="https://gate.iitkgp.ac.in/">GATE</a></span>
+                <span class="loo"><a href="https://iimcat.ac.in/per/g01/pub/756/ASM/WebPortal/1/index.html?756@@1@@1">CAT</a></span>
+            </div>
+        
+        
+        </div> 
+        
+        
+        <span class="oop"><a href="./results.html">Results</a></span>
+        <a href="./login.html" style="float: right;">Login</a>
+    
+    </div>
+</div>
+<div class="background">
+<form method="get" action="./accepted.html">
+            <center>
+        <img src="./images/trans_bms_info.png" alt="BMSCE" id="college_logo"></center>
+ <h5>ACADEMIC DETAILS</h5>
+ <br>
+ <label for="fname" class="usn">USN:</label>
+ <input type="text" id="usn" name="usn" placeholder="USN" pattern="[0-9]{1}[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{3}" />
+<label class="course">Course</label>
+<select> 
+ <option value="Course">Select</option>  
+ <option value="B.E">B.E</option>  
+ <option value="M.E">M.E</option>  
+ <option value="B.Tech">B.Tech</option>    
+ <option value="M.Tech">M.Tech</option>  
+ </select>
+<label class="department">Department</label>
+<select>  
+<option value="Department">Select</option>  
+<option value="AEROSPACE">AE</option>  
+<option value="Mechanical">ME</option>  
+<option value="computer science">CSE</option>  
+<option value="Civil">CE</option>  
+<option value="ELECTRICAL">EEE</option>  
+<option value="INFORMATION">ISE</option>  
+<option value="Electronics">ECE</option>
+<option value="Artificial intelligence">AI</option>
+<option value="machine learning">ML</option>
+</select>
+<label for="section" class="section">Section:</label>
+<input type="text" name="section" id="section" size="1" />
+<label for="academic year" class="academic">Academic year:</label>
+<input type="text" name="acd year" id="academic" size="4">
+<label for="acomodation" class="accomodation">Accomodation:</label>
+<input type="radio" name="hostel"/>
+<label for="dayscholar" class="Dayscholar">Dayscholar</label>
+<input type="radio" name="hostel" />
+<label for="hostel" class="Hostel">Hostel</label>
+<h5>Subject</h5>
+<ul>
+<label for="Semester" class="SEMESTER">SEMESTER</label>
+<input type="radio" name="I Sem"/>I |
+<input type="radio" name="I Sem"/>II |
+<input type="radio" name="I Sem"/>III |
+<input type="radio" name="I Sem"/>IV |
+<input type="radio" name="I Sem"/>V |
+<input type="radio" name="I Sem"/>VI |
+<input type="radio" name="I Sem"/>VII |
+<input type="radio" name="I Sem"/>VIII |
+</ul>
+
+            <style>
+                table,
+                th{
+                    border: 1px solid  rgb(2, 2, 3);
+                }
+            </style>
+
+                <h2></h2>
+                <center>
+                    <table>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Subject code</th>
+                            <th>Credits</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text " value=" "></td>
+                            <td><input type="text " value=" "></td>
+                            <td><input type="text " value=" "></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text " value=" "></td>
+                            <td><input type="text " value=" "></td>
+                            <td><input type="text " value=" "></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text " value=" "></td>
+                            <td><input type="text " value=" "></td>
+                            <td><input type="text " value=" "></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text " value=" "></td>
+                            <td><input type="text " value=" "></td>
+                            <td><input type="text " value=" "></td>
+                        </tr>
+                    </table>
+                </center><br>
+                <div1><br>
+                    <h4>DECLARATION</h4>
+
+                    <P> <input type="checkbox" name="dec " id="dec ">
+                        I hereby declare that the information given in this application is true and correct to the best of my knowledge and belief. In case any information given in this application proves to be false or incorrect, I shall be responsible for the consequences.
+                    </P>
+                </div1>
+                <br>
+            <a href="./index.html"class="button3" onclick="submited()">SUBMIT</a>
+            <script>
+                function submited() {
+                    alert("Your application has been recorded");
+                }
+            </script>
+</form>
+</div>
+<a href="https://bmsce.ac.in/home" class="official">Visit official website</a>
+<div class="end">
+<hr>
+<h2 class="ends">&copy;BMSCE 2021-22</h2>
+</div>
+</body>
+</html>

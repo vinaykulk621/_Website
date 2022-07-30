@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./CSS/home.css">
+  <link rel="icon" type="image/x-icon" href="/images/1200px-BMS_College_of_Engineering.svg.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./CSS/form.css">
+  <title>BMSCE</title>
+</head>
+<body>
+
+  
+<div class="header">
+  <!--bms logo-->
+  <a href="./index.html">
+  <img src="./images/trans_bms_info.png" alt="BMSCE" id="college_logo">
+  </a>
+  <!--top right profile photo-->
+  <a href="./profile.html">
+  <img src="./images/trans_profile_img-removebg-preview.png" alt="PROFILE_PHOTO" id="profile_photo"> 
+  </a>
+
+
+
+  <div class="navbar">
+
+
+      <span class="ho"><a href="./index.html">Home</a></span>
+      <span  class="ni"><a href="./campus.html">Campus</a></span>  
+      
+      <div class="dropdown">
+      
+          <span class="ji"><button class="dropbtn">Exams
+          </button></span> 
+      
+      
+      
+          <div class="dropdown-content">
+              <span class="hoo"><a href="form1.html">REGULAR</a></li></span>
+              <span class="joo"><a href="form1.html">RE-REGISTER</a></li></span>
+              <span class="poo"><a href="form_fast.html">FAST TRACK</a></span>
+              <span class="ioo"><a href="https://gate.iitkgp.ac.in/">GATE</a></span>
+              <span class="loo"><a href="https://iimcat.ac.in/per/g01/pub/756/ASM/WebPortal/1/index.html?756@@1@@1">CAT</a></span>
+          </div>
+      
+      
+      </div> 
+      
+      
+      <span class="oop"><a href="./results.html">Results</a></span>
+      <a href="./login.html" style="float: right;">Login</a>
+  
+  </div>
+</div>
+  
+  
+
+
+<div class="background">
+  <form method="get" action="accept2.html" id="form">
+    <center><img src="./images/trans_bms_info.png" alt="BMSCE" id="college_logo"></center>
+  <h5>STUDENT INFORMATION</h5>
+  <div class="inputs">
+    <label for="Student First Name" class="fname">Student Name</label">
+    <input type="text" name="Student First Name" id="fname"placeholder="First Name"
+     required>
+    <input type="text" id="mname" name="Student Middle Name"   placeholder="Middle Name">
+    <input type="text" required id="lname" name="Student Last Name" placeholder="Last Name" >
+  <br>  
+  <label for="Fathername" class="Fathername" style="padding-right: 15px;">Father Name</label>
+  <input type="text"id="fatherfname" name="Father First Name"required placeholder="First Name"
+  >
+  <input type="text" id="mname" name="Father Middle Name" placeholder="Middle Name" > 
+  <input type="text" id="lname" required name="Father Last Name" placeholder="Last Name" >
+  
+  <label class="Mothername" style="padding-right: 5px;">Mother Name</label>
+  <input type="text"id="fname" name="mother First Name" placeholder="First Name" required
+  >
+  <input type="text" id="mname" name="mother Middle Name" placeholder="Middle Name" > 
+  <input type="text" id="lname" name="mother Last Name" placeholder="Last Name" required  size="21">
+  <br>
+  
+    <label for="dob" class="dob">DOB</label>
+    <input type="date"id="dob" placeholder="DD/MM/YYYY" required>
+    <label for="state" class="state">State</label>
+    <select id="state_selector" style="height: 30px;" required>
+      <option value="">select</option>
+      <option value="AP">Andhra Pradesh</option>
+      <option value="AR">Arunachal Pradesh</option>
+      <option value="AS">Assam</option>
+      <option value="BR">Bihar</option>
+      <option value="CH">Chandigarh</option>
+      <option value="CT">Chhattisgarh</option>
+      <option value="DD">Daman and Diu</option>
+      <option value="DL">Delhi</option>
+      <option value="GA">Goa</option>
+      <option value="GJ">Gujarat</option>
+      <option value="HR">Haryana</option>
+      <option value="HP">Himachal Pradesh</option>
+      <option value="JK">Jammu and Kashmir</option>
+      <option value="JH">Jharkhand</option>
+      <option value="KA">Karnataka</option>
+      <option value="KL">Kerala</option>
+      <option value="LA">Ladakh</option>
+      <option value="LD">Lakshadweep</option>
+      <option value="MP">Madhya Pradesh</option>
+      <option value="MH">Maharashtra</option>
+      <option value="MN">Manipur</option>
+      <option value="ML">Meghalaya</option>
+      <option value="MZ">Mizoram</option>
+      <option value="NL">Nagaland</option>
+      <option value="OR">Odisha</option>
+      <option value="PY">Puducherry</option>
+      <option value="PB">Punjab</option>
+      <option value="RJ">Rajasthan</option>
+      <option value="SK">Sikkim</option>
+      <option value="TN">Tamil Nadu</option>
+      <option value="TG">Telangana</option>
+      <option value="TR">Tripura</option>
+      <option value="UP">Uttar Pradesh</option>
+      <option value="UT">Uttarakhand</option>
+      <option value="WB">West Bengal</option>
+    </select>
+  
+    <label class="city" style="padding-left: 8px;">City</label>
+    <input type="text"  placeholder="City" name="City" id="city" maxlength="20" required/>
+  
+  
+  <br>
+   <label class="phone">Mobile-No </label>
+   <input type="tel"  placeholder="Student's Mobile-No" name="Student's Mobile-No" id="phone" maxlength="10" size="22" required/> 
+   <input type="tel"  placeholder="Father's Mobile-No" id="phone" maxlength="10"name="Father's Mobile-No" size="21" required/>
+   <input type="tel"  placeholder="Mother's Mobile-No" id="phone" maxlength="10" size="22" name="Mother's Mobile-No" required/>
+    <br>
+    <label for="E-mail" class="E-mail" required>E-Mail Id</label>
+    <input type="email" id="E-mail" name="Student's E-mail" size="22" placeholder="student@gmail.com" required>
+    <input type="email" id="E-mail" name="Father's E-mail" size="22" placeholder="Father@gmail.com" required>
+    <input type="email" id="E-mail" name="Mother's E-mail" size="22" placeholder="Mother@gmail.com" required>
+    <br>
+    <label for="acomodation" class="accomodation">Accomodation:</label>
+    <select style="height: 30px;" required>
+      <option value="" name="accomodation">select</option>
+      <option value=""name="accomodation">Day-Schollor</option>
+      <option value=""name="accomodation">PG</option>
+      <option value=""name="accomodation">Hostel</option>
+    </select>
+    <label style="padding-left: 40px;">Gender </label>
+    <input type="radio"  required /> Male
+    <input type="radio"  required /> Female
+    <input type="radio"  required /> Other
+    <br>
+    <textarea rows="8" cols="39" value="address" class="permanent" name="permanent Address" placeholder="Enter Permanent Address" required></textarea>
+    <textarea rows="8" cols="39" value="address" class="temporary" name="temporary Address" placeholder="Enter Temporary Address" required></textarea>
+    <br>
+    <button type="submit" class="button">SUBMIT</button>
+  </div>
+  </form>
+  </div>
+  
+<div class="end">
+</div>
+  <div class="end">
+<a href="https://bmsce.ac.in/home" class="official">Visit official website</a>
+<h2 class="ends">&copy;BMSCE 2021-22</h2>
+</div>
+</body>
+</html>

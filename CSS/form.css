@@ -1,0 +1,516 @@
+form{
+    border:2px solid rgba(95, 82, 82, 0.53);
+    box-shadow:  20px 20px 47px #cae3ee9c,-20px -20px 47px #acc8e7a1; 
+    width: 100vh;
+    height: 110vh;
+    background-color: white;
+    z-index: 10;
+    margin: auto;   
+  }
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+  .form2{
+  height: 110vh;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+   
+.official{
+  border-radius: 4px;
+  color: rgb(0, 0, 0);
+  position:relative;
+  top: 20px;
+  left: 45px;
+  padding: 15px 40px;
+  background-color: rgb(165, 219, 243);
+  text-decoration: none;
+  z-index: 100;
+}
+  .navbar {
+    overflow: hidden;
+    border-top: 0px solid black;
+    border-bottom: 1px black solid;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2),0px -1px 1px 0px rgba(88, 81, 81, 0.408);
+  }
+  .navbar a {
+    float: left;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 22px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 18px;
+    text-decoration: none;
+  }
+ 
+  input[type="text"]{
+    border: none;
+    height: 35px;
+    margin-left: 7px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+  }
+  
+  input[type="email"]{
+    border: none;
+    height: 35px;
+    margin-left: 7px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+  }
+  
+  input[type="email"]:focus{
+    outline: none !important;
+    border-color: #719ECE;
+    box-shadow:  1px 1px 2px #757575;
+    transition: all 0.2s ease;
+    margin-bottom: 20px;
+  }
+
+  input[type="email"]:focus::placeholder{
+    transform: scale(1,1) translatex(12px);
+    color: #719ECE;
+    transition: all 0.3s;
+  }  
+  input[type="tel"]{
+    border: none;
+    height: 35px;
+    margin-left: 7px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+  }
+
+  
+  input[type="tel"]:focus{
+    outline: none !important;
+    border-color: #719ECE;
+    box-shadow:  1px 1px 2px #757575;
+    transition: all 0.2s ease;
+    margin-bottom: 20px;
+  }
+  input[type="tel"]:focus::placeholder{
+    transform: scale(1,1) translatex(12px);
+    color: #719ECE;
+    transition: all 0.3s;
+  }
+  .inputs{
+    position: relative;
+    left: 3%;
+    margin-bottom: 20px;
+    font-family:sans-serif;
+  }
+  
+  input[type="text"]:focus{
+    outline: none !important;
+    border-color: #719ECE;
+    box-shadow:  1px 1px 2px #757575;
+    transition: all 0.2s ease;
+    margin-bottom: 20px;
+  }
+
+  input[type="text"]:focus::placeholder{
+    transform: scale(1,1) translatex(12px);
+    color: #719ECE;
+    transition: all 0.3s;
+  }
+
+  #fname,#mname,#lname{
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+
+  #dob{
+      border : 1px solid grey;
+      padding: 8px ;
+      width:125px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      margin-left: 15px;
+      background-color: rgb(255, 255, 254);
+  }
+  .ho::after{
+    content: '';
+  background-color: rgb(28, 183, 240);
+  width: 0px;
+  height: 4px;
+  border-radius: 4px;
+  position:absolute;
+  top:111px;
+  left:50px;
+  transform: translateX(-50%);
+  transition: all .5s;
+}
+
+.ho:hover::after{    
+  width:60px;
+}
+
+
+.state{
+  padding-left: 20px;
+  transform: translatex(20px);
+}
+
+.ji::after{
+  content: '';
+  background-color: rgb(28, 183, 240);
+  width: 0px;
+  height: 4px;
+  border-radius: 4px;
+  position:absolute;
+  top:111px;
+  left:264px;
+  transform: translateX(-50%);
+  transition: all .5s;
+}
+
+.ji:hover::after{    
+  width:60px;
+}
+.ni::after{
+  content: '';
+  background-color: rgb(28, 183, 240);
+  width: 0px;
+  height: 4px;
+  border-radius: 4px;
+  position:absolute;
+  top:111px;
+  left:155px;
+  transform: translateX(-50%);
+  transition: all .5s;
+}
+
+.ni:hover::after{    
+  width:80px;
+}
+.hoo::after{
+  content: '';
+  background-color: rgb(28, 183, 240);
+  width: 0px;
+  height: 4px;
+  border-radius: 4px;
+  position:absolute;
+  top:33px;
+  left:60px;
+  transform: translateX(-50%);
+  transition: all .5s;
+}
+
+.hoo:hover::after{    
+  width:80px;
+}
+
+
+
+.joo::after{
+  content: '';
+  background-color: rgb(28, 183, 240);
+  width: 0px;
+  height: 4px;
+  border-radius: 4px;
+  position:absolute;
+  top:80px;
+  left:78px;
+  transform: translateX(-50%);
+  transition: all .5s;
+}
+
+.joo:hover::after{    
+  width:115px;
+}
+
+
+.poo::after{
+  content: '';
+  background-color: rgb(28, 183, 240);
+  width: 0px;
+  height: 4px;
+  border-radius: 4px;
+  position:absolute;
+  top:127px;
+  left:70px;
+  transform: translateX(-50%);
+  transition: all .5s;
+}
+
+.poo:hover::after{    
+  width:105px;
+}
+
+
+
+.ioo::after{
+  content: '';
+  background-color: rgb(28, 183, 240);
+  width: 0px;
+  height: 4px;
+  border-radius: 4px;
+  position:absolute;
+  top:167px;
+  left:40px;
+  transform: translateX(-50%);
+  transition: all .5s;
+}
+
+.ioo:hover::after{    
+  width:40px;
+}
+
+.loo::after{
+  content: '';
+  background-color: rgb(28, 183, 240);
+  width: 0px;
+  height: 4px;
+  border-radius: 4px;
+  position:absolute;
+  top:210px;
+  left:35px;
+  transform: translateX(-50%);
+  transition: all .5s;
+}
+
+.loo:hover::after{    
+  width:35px;
+}
+
+
+.oop::after{
+  content: '';
+  background-color: rgb(28, 183, 240);
+  width: 0px;
+  height: 4px;
+  border-radius: 4px;
+  position:absolute;
+  top:111px;
+  left:367px;
+  transform: translateX(-50%);
+  transition: all .5s;
+}
+
+.oop:hover::after{    
+  width:75px;
+}
+
+
+  .oop::after{
+    content: '';
+    background-color: white;
+    width: 0px;
+    height: 4px;
+    border-radius: 4px;
+    position:absolute;
+    top:111px;
+    left:367px;
+    transform: translateX(-50%);
+    transition: all .5s;
+  }
+
+  .oop:hover::after{    
+    width:75px;
+  }
+
+
+
+  .navbar a {
+    float: left;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 22px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 18px;
+    text-decoration: none;
+  }
+  
+  .header{
+   background-color: #bdd4e7;
+   background-image: linear-gradient(315deg, #bdd4e7 0%, #97aedd 74%);  
+  }
+
+  .dropdown {
+    float: left;
+    font-family: "IBM Plex Sans", sans-serif;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 22px;  
+    border: none;
+    box-shadow: 50px;
+    font-family: "IBM Plex Sans", sans-serif;
+    outline: none;
+    color: rgb(0, 0, 0);
+    padding: 14px 16px;
+    background-color: inherit;
+    margin: 0;
+  }
+
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: black;
+    border-radius: 50px,50px,0px,0px;
+    font-family: "IBM Plex Sans", sans-serif;
+    transition: all 0.2s ease;
+    color: red;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-image: linear-gradient(to top, rgb(17, 16, 16),
+    rgb(72, 67, 67));
+    min-width: 160px;
+    font-family: "IBM Plex Sans", sans-serif;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 18px;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: black;
+    font-size: 18px;
+    transition: all 0.2s ease;
+    font-family: "IBM Plex Sans", sans-serif;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+h5 {
+    border: 0px solid black;
+    padding: 6px;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(245, 236, 236);
+    font-family: 'Ubuntu', sans-serif;
+}
+table{
+    box-shadow: 0px 8px 16px 0px rgba(192, 61, 61, 0.2);
+    
+}
+.background{
+    background-image: linear-gradient(to bottom, rgba(216, 219, 226, 0.541), rgb(84, 133, 197));
+}
+.college_logo{
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 25%;
+  }
+.permanent,.temporary{
+  transform: translate(-16px,28px);
+  border: none;
+  margin: 20px;
+  box-shadow: 0px 4px 6px 0px  rgba(0, 0, 0, 0.2),0px 6px 20px 0px rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+  background-color: rgb(251, 251, 248);
+}
+.permanent:focus,.temporary:focus{
+  transform: scale(1.1,1.1);
+  transform: translate(-16px,28px);
+  box-shadow:  20px 20px 47px #757575,-20px -20px 47px #ffffff; 
+  transition: all 0.5s ease;
+  border-radius: 5px;
+  border: none;
+  border: 0px solid black;
+  background-color: rgb(251, 251, 248);
+}
+
+
+textarea:focus{
+  outline: none !important;
+  border-color: #719ECE;
+  box-shadow:  1px 1px 2px #757575;
+  transition: all 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.button{
+    position: relative;
+    top: 40px;
+    left: 28%;
+    border: 0px rgb(202, 220, 235);
+    padding: 6px 90px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.01s;
+    border-radius: 4px;
+    height: 50%;
+    background-color:rgb(95, 150, 223);
+    box-shadow: 0px 4px 8px 0px  rgba(0, 0, 0, 0.2),0px 6px 20px 0px rgba(0, 0, 0, 0.19);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.button:focus{
+    text-decoration: none;
+    color: white; 
+    box-shadow: 0px 0px 0px 0px transparent;
+}
+.button2{
+    position: relative;
+    top: 12px;
+    left: 28%;
+    border: 0px rgb(202, 220, 235);
+    padding: 6px 90px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0px 4px 8px 0px  rgba(0, 0, 0, 0.2),0px 6px 20px 0px rgba(0, 0, 0, 0.19);
+    transition: all 0.01s;
+    border-radius: 4px;
+    background-color:rgb(95, 150, 223);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.button2:focus{
+    text-decoration: none;
+    color: white; 
+    box-shadow: 0px 0px 0px 0px transparent;
+}
+.button3{
+    position: relative;
+    top: 12px;
+    left: 33%;
+    border: 0px rgb(202, 220, 235);
+    padding: 6px 90px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0px 4px 8px 0px  rgba(0, 0, 0, 0.2),0px 6px 20px 0px rgba(0, 0, 0, 0.19);
+    transition: all 0.01s;
+    border-radius: 4px;
+    background-color:rgb(95, 150, 223);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.button3:focus{
+    text-decoration: none;
+    box-shadow: 0px 0px 0px 0px transparent;
+}
+.usn,.department,.section,.academic,.accomodation,.SEMESTER,.Fathername,.Mothername,.E-mail,.dob,.lname,.mname,.fname,.course{
+    font-size: 22px;
+}
+.button,.button2,.button3{
+    font-size: 18px;
+}
+
+.Dayscholar,.Hostel{
+    font-size: 18px;
+}
+.end{
+    height: 120px;
+    background-color: rgb(0, 0, 0);
+  }
+  .ends{
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    position: relative;
+    top: 10px;
+  }
