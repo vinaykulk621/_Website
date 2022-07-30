@@ -270,6 +270,7 @@ body {
   left: 50px;
   background: linear-gradient(to bottom, #ece9e6, #ffffff);
   display: block;
+  margin-bottom: 70px;
 }
 .img1 {
   border: 0px solid black;
@@ -438,12 +439,27 @@ body {
     0px 6px 20px 0px rgba(0, 0, 0, 0.19);
   transition: all 0.5s ease;
   background-color: #f9f9f9;
-  height: 370px;
-  width: 1300px;
-  position: relative;
+  min-height: 50vh;
+  max-height: 90vh;
+  max-width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
   margin: auto;
-  margin-bottom: 80px;
-  top: 50px;
+}
+.h1_of_exam {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bms_notification,
+.exam_notification {
+  display: flex;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 #notification:hover {
   box-shadow: 20px 20px 47px #e6d7d7, -20px -20px 47px #dce2e9;
@@ -474,8 +490,8 @@ h1 {
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2),
     0px 6px 20px 0px rgba(0, 0, 0, 0.19);
   background-color: #f9f9f9;
-  height: 400px;
-  width: 1300px;
+  /* height: 400px; */
+  /* width: 1300px; */
   transition: all 0.5s ease;
   position: relative;
   margin: auto;
@@ -484,9 +500,12 @@ h1 {
   font-family: "IBM Plex Sans", sans-serif;
   display: block;
   overflow-y: hidden;
+  min-height: 50vh;
+  max-height: 90vh;
+  max-width: 90vw;
 }
 #bms_notification:hover {
-  height: 540px;
+  /* height: 540px; */
   box-shadow: 20px 20px 47px #e6d7d7, -20px -20px 47px #dce2e9;
 }
 .sticky {
