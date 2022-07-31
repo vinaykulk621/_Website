@@ -1,3 +1,14 @@
+<?php
+//importing database connection
+require_once("configuration/config.php");
+
+if($con){
+  $query=$con->prepare("SELECT * FROM `student`");
+  $array=$query->execute();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +23,10 @@
   </head>
 
   <body>
+
+  <?php foreach ($array as $array){
+    echo $array['usn'];  
+    }?>
 
     <!--header container-->
     <div class="header" id="header">
