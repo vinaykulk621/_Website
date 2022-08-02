@@ -4,6 +4,7 @@ require_once("configuration/config.php");
 require_once("configuration/auth.php");
 
 session_start();
+
 if (!User::isloggedin()) {
     header("Location: login.php");
 }
@@ -24,102 +25,22 @@ if (!User::isloggedin()) {
 <body>
 
     <!--header container-->
-    <div class="header" id="header">
+    <?php require('driver_code/html/header.html'); ?>
 
-        <!--bms logo-->
-        <a href="./index.html">
-            <img src="./images/trans_bms_info.png" alt="BMSCE" id="college_logo">
-        </a>
 
-        <!--top right profile photo-->
-        <a href="./profile.html">
-            <img src="./images/trans_profile_img-removebg-preview.png" alt="PROFILE_PHOTO" id="profile_photo">
-        </a>
+    <!-- student info pallet -->
+    <div id="profile_pallet" name="profile_pallet">
 
-        <!--Navbar container-->
-        <div class="navbar">
+        <!-- Place for image of the student -->
+        <img src="./images/trans_profile_img-removebg-preview.png" alt="PROFILE_PHOTO" id="in_pallet_profile">
 
-            <!--Navbar content-->
-            <span class="ho"><a href="./index.html">Home</a></span>
-            <span class="ni"><a href="./campus.html">Campus</a></span>
+        <!--Place for name of the student-->
+        <div id="name"></div>
 
-            <!--dropdown container-->
-            <div class="dropdown">
-
-                <!--dropdown button-->
-                <span class="ji">
-                    <button class="dropbtn">
-                        Exams
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                </span>
-
-                <!--dropdown content-->
-                <div class="dropdown-content">
-                    <span class="hoo"><a href="form1.html">REGULAR</a></li></span>
-                    <span class="joo"><a href="form1.html">RE-REGISTER</a></li></span>
-                    <span class="poo"><a href="form_fast.html">FAST TRACK</a></span>
-                    <span class="ioo"><a href="https://gate.iitkgp.ac.in/" target="_blank">GATE</a></span>
-                    <span class="loo">
-                        <a href="https://iimcat.ac.in/per/g01/pub/756/ASM/WebPortal/1/index.html?756@@1@@1" target="_blank">CAT</a>
-                    </span>
-
-                    <!--dropdown content end-->
-                </div>
-
-                <!--dropdown container end-->
-            </div>
-
-            <span class="oop">
-                <a href="./results.html">Results</a>
-            </span>
-
-            <!-- shows the required button depending on the logged in or logged -->
-            <?php
-            if (User::isloggedin()) {
-                echo '<a href="configuration/logout.php" style="float: right;">Logout</a>';
-            } else {
-                echo '<a href="./login.php" style="float: right;">Login</a>';
-            }
-            ?>
-
-            <!--Navbar container end-->
-        </div>
-
-        <!--header container end-->
     </div>
 
 
-    student info pallet
-    <div id="profile_pallet" name="profile_pallet">
-
-    <!-- Place for image of the student -->
-    <img src="./images/trans_profile_img-removebg-preview.png" alt="PROFILE_PHOTO" id="in_pallet_profile">
-
-    <!--Place for name of the student-->
-    <div id="name"></div>
-
-    <!-- <?php
-    if ($con) {
-        $query = "SELECT `usn`, `student_email`, `student_name`, `branch_name` FROM `student` WHERE `usn`='1BM20CS001'";
-        $res = $con->query($query);
-    }
-    if ($res) {
-        while ($array = $res->fetch(PDO::FETCH_OBJ)) {
-            echo '
-        <h1>' . $array->usn . '</h1>
-        <h1>' . $array->student_email . '</h1>
-        <h1>' . $array->student_name . '</h1>
-        <h1>' . $array->branch_name . '</h1>
-        ';
-        }
-    } else {
-        echo 'Data not found';
-    }
-    ?> -->
-
-
-    <!-- results pallete--> 
+    <!-- results pallete-->
     <a href="./result.html" style="color: black;">
         <div id="result" name="result">
             <h1>YOUR RESULTS</h1>
