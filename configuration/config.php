@@ -2,7 +2,6 @@
 //database connection
 
 ob_start();    
-session_start();
 
 try {
     $con = new PDO("mysql:dbname=website;host=localhost","root","");

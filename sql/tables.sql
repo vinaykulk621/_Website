@@ -5,6 +5,7 @@ CREATE TABLE `website`.`student`
     `student_email` VARCHAR(30) NOT NULL ,
     `student_name` VARCHAR(30) NOT NULL ,
     `branch_name` VARCHAR(5) NOT NULL ,
+    `password` VARCHAR(15) NOT NULL ,
     PRIMARY KEY (`usn`(10)),
     UNIQUE `email` (`student_email`(30))
 ) 
