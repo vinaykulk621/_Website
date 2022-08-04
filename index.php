@@ -14,7 +14,7 @@ require_once("configuration/auth.php");
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="/images/1200px-BMS_College_of_Engineering.svg.png">
+  <link rel="icon" type="image/x-icon" href="./images/1200px-BMS_College_of_Engineering.svg.png">
   <link rel="stylesheet" href="./CSS/home.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <title>BMSCE</title>
@@ -60,7 +60,7 @@ require_once("configuration/auth.php");
       </p1>
       <P1>3. OPENING DATE OF ONLINE APPLICATION PORTAL FOR GATE 2022: 02nd Sep, 2021 (Thu)</P1>
       <P1>4. CLOSING DATE OF ONLINE APLLICATION PORTAL:30th Sep, 2021 (Thu)</P1>
-      <P1>5. CAT EXAMS ARE SCHEDULED TO TAKE PLACE ON Sun, 28 Nov, 2021 <a href="https://iimcat.ac.in/per/g01/pub/756/ASM/WebPortal/1/index.html?756@@1@@1" target="_blank" style="text-decoration: none;">click here to visit official GATE website</a>
+      <P1>5. CAT EXAMS ARE SCHEDULED TO TAKE PLACE ON Sun, 28 Nov, 2021 <a href="https://iimcat.ac.in/per/g01/pub/756/ASM/WebPortal/1/index.php?756@@1@@1" target="_blank" style="text-decoration: none;">click here to visit official GATE website</a>
       </P1>
       <P1>6. <a href="https://cdn.digialm.com//EForms/configuredHtml/756/66504/login.html" target="_blank" style="text-decoration: none;">click here</a>TO DOWNLOAD CAT 2020 SCORE CARD
       </P1>

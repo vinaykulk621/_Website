@@ -6,9 +6,9 @@ require_once("driver_code/php/retrieval.php");
 
 session_start();
 
-// if (!User::isloggedin()) {
-//     header("Location: login.php");
-// }
+if (!User::isloggedin()) {
+    header("Location: login.php");
+}
 
 ?>
 
@@ -19,7 +19,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/images/1200px-BMS_College_of_Engineering.svg.png">
+    <link rel="icon" type="image/x-icon" href="./images/1200px-BMS_College_of_Engineering.svg.png">
     <link rel="stylesheet" href="./CSS/profile.css">
     <title>BMSCE</title>
 </head>
@@ -56,19 +56,12 @@ session_start();
                 <div class="profile_image">
                     <img src="./images/trans_profile_img-removebg-preview.png" alt="PROFILE_PHOTO" id="in_pallet_profile">
                 </div>
-
-                <!-- profile image edit symbol -->
-                <!-- <div class="profile_image_editor">
-                        <form action="post">
-                            <input type="file" value="change" class="change_photo">
-                        </form>
-                    </div> -->
-
             </div>
 
             <div class="name">
                 <?php
-                echo usn_query($con);
+                $res = usn_query($con);
+                echo '<p class="name_">' . strtoupper($res['student_name']) . '</p>' . '<p class="usn_">' . $res['usn'] . '</p>';
                 ?>
             </div>
 
@@ -92,18 +85,6 @@ session_start();
             </div>
         </a>
     </div>
-
-
-    <!--Some bullshit-->
-    <!-- <script>
-        var nam = document.getElementsByClassName('username').value
-        const result = document.getElementById('name')
-        new URLSearchParams(window.location.search).forEach((value,
-            name) => {
-            result.append(`${value}`)
-            result.append(document.createElement('br'))
-        })
-    </script> -->
 
 </body>
 

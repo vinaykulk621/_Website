@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="./CSS/campus.css">
-    <link rel="icon" type="image/x-icon" href="/images/1200px-BMS_College_of_Engineering.svg.png">
+    <link rel="icon" type="image/x-icon" href="./images/1200px-BMS_College_of_Engineering.svg.png">
     <link rel="stylesheet" href="./CSS/profile.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>BMSCE</title>

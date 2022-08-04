@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/home.css">
-    <link rel="icon" type="image/x-icon" href="/images/1200px-BMS_College_of_Engineering.svg.png">
+    <link rel="icon" type="image/x-icon" href="./images/1200px-BMS_College_of_Engineering.svg.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./CSS/form.css">
     <title>BMSCE</title>
@@ -14,12 +14,10 @@
 
   <body>
 
-
     <!--header container-->
     <?php
         require_once("driver_code/html/header.html");
     ?>
-
 
     <div class="background">
       <form method="get" action="accept2.html" id="form">
@@ -45,6 +43,7 @@
             <label for="dob" class="dob">DOB</label>
             <input type="date" id="dob" placeholder="DD/MM/YYYY" required>
             <label for="state" class="state">State</label>
+
             <select id="state_selector" style="height: 30px;" required>
               <option value="">select</option>
               <option value="AP">Andhra Pradesh</option>
@@ -89,6 +88,8 @@
 
 
             <br>
+
+
             <label class="phone">Mobile-No </label>
             <input type="tel" placeholder="Student's Mobile-No" name="Student's Mobile-No" id="phone" maxlength="10"
               size="22" required />
@@ -96,36 +97,45 @@
               size="21" required />
             <input type="tel" placeholder="Mother's Mobile-No" id="phone" maxlength="10" size="22"
               name="Mother's Mobile-No" required />
+
             <br>
+
             <label for="E-mail" class="E-mail" required>E-Mail Id</label>
             <input type="email" id="E-mail" name="Student's E-mail" size="22" placeholder="student@gmail.com" required>
             <input type="email" id="E-mail" name="Father's E-mail" size="22" placeholder="Father@gmail.com" required>
             <input type="email" id="E-mail" name="Mother's E-mail" size="22" placeholder="Mother@gmail.com" required>
+
             <br>
+
             <label for="acomodation" class="accomodation">Accomodation:</label>
+
             <select style="height: 30px;" required>
               <option value="" name="accomodation">select</option>
               <option value="" name="accomodation">Day-Schollor</option>
               <option value="" name="accomodation">PG</option>
               <option value="" name="accomodation">Hostel</option>
             </select>
+
             <label style="padding-left: 40px;">Gender </label>
             <input type="radio" required /> Male
             <input type="radio" required /> Female
             <input type="radio" required /> Other
+
             <br>
+
             <textarea rows="8" cols="39" value="address" class="permanent" name="permanent Address"
               placeholder="Enter Permanent Address" required></textarea>
             <textarea rows="8" cols="39" value="address" class="temporary" name="temporary Address"
               placeholder="Enter Temporary Address" required></textarea>
+
             <br>
+
             <button type="submit" class="button">SUBMIT</button>
         </div>
       </form>
+
     </div>
 
-    <div class="end">
-    </div>
     <div class="end">
       <a href="https://bmsce.ac.in/home" class="official">Visit official website</a>
       <h2 class="ends">&copy;BMSCE 2021-22</h2>

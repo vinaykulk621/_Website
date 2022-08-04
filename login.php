@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="icon" type="image/x-icon" href="/images/1200px-BMS_College_of_Engineering.svg.png">
+  <link rel="icon" type="image/x-icon" href="./images/1200px-BMS_College_of_Engineering.svg.png">
   <link rel="stylesheet" href="./CSS/login.css">
   <script src="validate.js"></script>
   <title>BMSCE</title>
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     <!--login form-->
-    <!-- action="profile.html"  onsubmit="return validateForm()"  -->
+    <!-- action="profile.php"  onsubmit="return validateForm()"  -->
     <form name="login" method="post">
 
       <!--BMS logo-->

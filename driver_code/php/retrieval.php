@@ -29,14 +29,9 @@ function query_all($con){
 function usn_query($con)
 {
     if ($con) {
-        $query = "SELECT `usn`, `student_email`, `student_name`, `branch_name` FROM `student` WHERE `usn`='1BM20CS001'";
+        $query = "SELECT `usn`,`student_name` FROM `student` WHERE `usn`='1BM20CS001'";
         $res = $con->query($query);
     }
-    if ($res) {
-        while ($array = $res->fetch(PDO::FETCH_OBJ)) {
-            return $array;
-        }
-    }
-    return $array;
+    return $array = $res->fetch(PDO::FETCH_ASSOC);
 }
 ?>
