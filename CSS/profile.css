@@ -118,22 +118,17 @@ body {
   box-shadow: 0px 3px 4px 0px grey;
   width: 400px;
   height: 450px;
-  position: absolute;
-  top: 190px;
-  bottom: 0;
-  left: 70px;
   transition: all 0.5s ease;
   background-color: #f9fbfb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /*profile pallet section end*/
 
 /*________________profile pallet details section start*/
 #in_pallet_profile {
   height: 200px;
-  position: relative;
-  left: 28%;
-  top: 10%;
-  margin: auto;
 }
 h1 {
   text-align: center;
@@ -149,10 +144,6 @@ h1 {
   width: 400px;
   height: 450px;
   background-color: #f8fafa;
-  position: absolute;
-  top: 190px;
-  bottom: 0;
-  left: 70px;
 }
 /*profile pallet section end*/
 
@@ -162,12 +153,12 @@ h1 {
   box-shadow: 0px 3px 4px 0px grey;
   width: 400px;
   height: 450px;
-  position: absolute;
-  top: 190px;
-  bottom: 0;
-  left: 580px;
   transition: all 0.5s ease;
   background-color: #f9fbfb;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
 }
 /*application pallet end*/
 
@@ -345,11 +336,12 @@ h1 {
   box-shadow: 0px 3px 4px 0px grey;
   width: 400px;
   height: 450px;
-  position: absolute;
-  top: 190px;
-  bottom: 0;
-  left: 1070px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: all 0.5s ease;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
 }
 /*result pallet end*/
 
@@ -357,16 +349,12 @@ h1 {
 .results_logo {
   width: 230px;
   height: 230px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 /*results_logo logo end*/
 
 /*________________result pallet start*/
 #result:hover {
   box-shadow: 20px 20px 47px #e6d7d7, -20px -20px 47px #dce2e9;
-
   transform: scale(1.1, 1.1);
 }
 /*result pallet end*/
@@ -443,4 +431,35 @@ h1 {
 }
 ::-webkit-scrollbar {
   width: 0px;
+}
+.profile_image_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+/* .profile_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+.profile_image_editor {
+  display: flex;
+  align-items: flex-start;
+}
+.change_photo {
+  display: flex;
+  justify-content: right;
+}
+.pallets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+.links_in_pallets {
+  color: black;
+  text-decoration: none;
 }
