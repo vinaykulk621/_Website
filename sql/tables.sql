@@ -1,51 +1,29 @@
+-- branch table
+CREATE TABLE `website`.`branch`
+(
+    `branch_name` VARCHAR(4)  NOT NULL , 
+    `hod` VARCHAR(40) NOT NULL , 
+    PRIMARY KEY (`branch_name`(4)), 
+    UNIQUE `hod` (`hod`(40))
+)
+ENGINE = InnoDB;
+
+
 -- student table
 CREATE TABLE `website`.`student` 
 (
-    `usn` VARCHAR(10) NOT NULL ,
-    `student_email` VARCHAR(30) NOT NULL ,
-    `student_name` VARCHAR(30) NOT NULL ,
-    `branch_name` VARCHAR(5) NOT NULL ,
-    `password` VARCHAR(15) NOT NULL ,
-    PRIMARY KEY (`usn`(10)),
-    UNIQUE `email` (`student_email`(30))
-) 
-ENGINE = InnoDB 
-COMMENT = 'table -- >student information';
-
-
--- parent/gaurdian table
-CREATE TABLE `website`.`parent` 
-(
-    `usn` VARCHAR(10) NOT NULL ,
-    `parent_email` VARCHAR(30) NOT NULL ,
-    `parent_name` VARCHAR(30) NOT NULL ,
-    `phone_no` int(10) NOT NULL ,
-    PRIMARY KEY (`usn`(10)),
-    FOREIGN key(`usn`) REFERENCES `student`(`usn`) 
-    ON DELETE CASCADE ON UPDATE CASCADE;
-    UNIQUE `email` (`parent_email`(30))
-) 
-ENGINE = InnoDB 
-COMMENT = 'table -- >parent information';
-
-
--- branch table
-CREATE TABLE `website`.`barnch`
-(
-    `barnch_id` VARCHAR(5) NOT NULL ,
-    `branch_name` VARCHAR(5) NOT NULL ,
-    `hod` VARCHAR(30) NOT NULL ,
-    PRIMARY KEY (`barnch_id`(5))
+    `usn` VARCHAR(10) NOT NULL , 
+    `student_name` VARCHAR(40) NOT NULL , 
+    `student_email` VARCHAR(40) NOT NULL , 
+    `branch_name` VARCHAR(4) NOT NULL , 
+    `password` VARCHAR(25) NOT NULL , 
+    PRIMARY KEY (`usn`(10)), 
+    UNIQUE `student_email` (`student_email`(40)), 
+    UNIQUE `branch_name` (`branch_name`(4)),
+    FOREIGN KEY (`branch_name`) REFERENCES `branch`(`branch_name`)
+    ON DELETE CASCADE ON UPDATE CASCADE
 )
-ENGINE = InnoDB
-COMMENT = 'table -- >branch information';
-
-
---Adding foreign key referrence to student table
-ALTER TABLE `student` 
-ADD CONSTRAINT `belongs to`
-FOREIGN KEY (`branch_name`) REFERENCES `barnch`(`branch_name`)
-ON DELETE CASCADE ON UPDATE CASCADE;
+ENGINE = InnoDB;
 
 
 -- course table
@@ -53,54 +31,44 @@ CREATE TABLE `website`.`course`
 (
     `usn` VARCHAR(10) NOT NULL ,
     `course_id` VARCHAR(15) NOT NULL ,
-    `branch_id` VARCHAR(5) NOT NULL ,
+    `branch_name` VARCHAR(4) NOT NULL ,
     `course_name` VARCHAR(50) NOT NULL ,
     `credit` INT(2) NOT NULL ,
-    PRIMARY KEY (`usn`(10), `course_id`(15), `branch_id`(5)),
-    FOREIGN KEY (`branch_id`) REFERENCES `barnch`(`barnch_id`) 
+    PRIMARY KEY (`course_id`(15)),
+    FOREIGN KEY (`branch_name`) REFERENCES `branch`(`branch_name`) 
     ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (`usn`) REFERENCES `student`(`usn`) 
     ON DELETE CASCADE ON UPDATE CASCADE
 ) 
-ENGINE = InnoDB
-COMMENT = 'table -- >course information';
+ENGINE = InnoDB;
 
 
 -- result table
 CREATE TABLE `website`.`result`
 (
     `usn` VARCHAR(10) NOT NULL , 
-    `branch_id` VARCHAR(5) NOT NULL , 
     `course_id` VARCHAR(15) NOT NULL , 
-    `course_name` VARCHAR(50) NOT NULL , 
     `cie` INT(2) NOT NULL , 
     `see` INT(2) NOT NULL , 
-    `total` INT(3) NOT NULL , 
+    `total_marks` INT(3) NOT NULL , 
     `grade` CHAR(1) NOT NULL , 
-    PRIMARY KEY (`usn`(10), `branch_id`(5)),
+    PRIMARY KEY (`usn`(10)),
     FOREIGN KEY (`usn`) REFERENCES `student`(`usn`) 
     ON DELETE CASCADE ON UPDATE CASCADE, 
-    FOREIGN KEY (`branch_id`) REFERENCES `barnch`(`barnch_id`) 
+    FOREIGN KEY (`course_id`) REFERENCES `course`(`course_id`) 
     ON DELETE CASCADE ON UPDATE CASCADE,
-    -- FOREIGN KEY (`course_name`) REFERENCES `course`(`course_name`) 
-    -- ON DELETE CASCADE ON UPDATE CASCADE 
 ) 
-ENGINE = InnoDB 
-COMMENT = 'table --> results table';
+ENGINE = InnoDB;
 
 
 -- appication table
 CREATE TABLE `website`.`aplication` 
 (
     `usn` VARCHAR(10) NOT NULL ,
-    `student_name` VARCHAR(30) NOT NULL ,
     `type` VARCHAR(5) NOT NULL ,
-    `course_name` VARCHAR(50) NOT NULL ,
     `course_id` VARCHAR(15) NOT NULL ,
-    `credit` INT(2) NOT NULL ,
-    PRIMARY KEY (`usn`(10),`student_name`(30),`type`(5)),
+    PRIMARY KEY (`type`(5)),
     FOREIGN key(`usn`) REFERENCES `student`(`usn`) 
     ON DELETE CASCADE ON UPDATE CASCADE
 ) 
-ENGINE = InnoDB 
-COMMENT = 'table -- >application table';
+ENGINE = InnoDB ;
