@@ -15,7 +15,7 @@
 
     <!--header container-->
     <?php
-    require_once("driver_code/html/header.html");
+    require_once("driver_code/html/header.php");
     ?>
 
     <!--unnecessary Images container-->

@@ -1,24 +1,19 @@
 <!--retrieval of all students -->
 <?php
-function query_all($con){
+function query_all($con)
+{
     if ($con) {
-        $query = "SELECT * FROM `student`";
-        $res = $con->query($query);
+        $sql = "SELECT * FROM `student` WHERE usn=:usn";
+        $query = $con->prepare($sql);
+        $query->bindValue(':usn', User::$usn, PDO::PARAM_STR);
+        $query->execute();
+        $res = $query->execute();
     }
     if ($res) {
-        while ($array = $res->fetch(PDO::FETCH_OBJ)) {
-            echo '
-        <h1>' . $array->usn . '</h1>
-        <h1>' . $array->student_email . '</h1>
-        <h1>' . $array->student_name . '</h1>
-        <h1>' . $array->branch_name . '</h1>
-        ';
-        }
-    } else {
-        echo 'Data not found';
+        return $array = $res->fetch(PDO::FETCH_ASSOC);
     }
 }
- ?>
+?>
 
 
 

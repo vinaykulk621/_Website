@@ -5,6 +5,9 @@ session_start();
 require_once("configuration/config.php");
 require_once("configuration/auth.php");
 
+if (!User::isloggedin()) {
+  $_SESSION['is_logged_in'] = false;
+}
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +27,7 @@ require_once("configuration/auth.php");
 
   <!--header container-->
   <?php
-  require_once("driver_code/html/header.html");
+  require_once("driver_code/html/header.php");
   ?>
 
 

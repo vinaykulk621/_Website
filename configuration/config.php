@@ -1,5 +1,6 @@
 <?php
 //database connection
+// session_start();
 
 ob_start();    
 

@@ -1,19 +1,18 @@
 <?php
+session_start();  //needed here and in index.php file 
 
 require("configuration/auth.php");
 require("configuration/config.php");
 
-session_start();  //needed here and in index.php file 
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (User::login($con, $_POST['email'], $_POST['username'], $_POST['usn'], $_POST['password'])) {
+  if (User::login($con, $_POST['usn'], $_POST['email'], $_POST['password'])) {
     $_SESSION['is_logged_in'] = true;
-    header('Location: profile.php');
+    header("Location: profile.php");
   } else {
-    echo "ghandu";
+    echo '<script> alert("wrong credentials") </script>';
   }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,40 +27,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <title>BMSCE</title>
 </head>
 
-<body class="bod" name="bod">
+<body>
 
   <!--____________________login box start-->
   <div class="login_box">
 
 
     <!--login form-->
-    <!-- action="profile.php"  onsubmit="return validateForm()"  -->
+    <!-- onsubmit="return validateForm()" -->
     <form name="login" method="post">
 
       <!--BMS logo-->
       <div id="logo">
-        <a href="https://www.BMSCE.ac.in/"><img src="./images/1200px-BMS_College_of_Engineering.svg.png" alt="BMSCE" style="height: 45PX; width: 45px; float: left;">
+        <a href="https://www.BMSCE.ac.in/"><img src="./images/1200px-BMS_College_of_Engineering.svg.png" alt="BMSCE" style="height: 45PX; width: 45px;">
         </a>
         <p>BMSCE</p>
       </div>
+
+      <!--USN label-->
+      <label for="usn" class="usn">USN</label>
+      <!--USN input-->
+      <input id="usn" type="text" placeholder="1BM00XX001" name="usn" pattern="[0-9]{1}[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{3}" autofocus>
 
 
       <!--Email lable-->
       <label for="email" class="email">email-id</label>
       <!--Email input-->
-      <input id="email" type="email" name="email" placeholder="Example@bmsce.ac.in" size="20px" autofocus>
-
-
-      <!--username label-->
-      <label for="username" class="username">username</label>
-      <!--username input-->
-      <input id="username" type="text" placeholder="Enter Username" size="20px" name="username">
-
-
-      <!--USN label-->
-      <label for="usn" class="usn">USN</label>
-      <!--USN input-->
-      <input id="usn" type="text" placeholder="1BM00XX001" name="usn" pattern="[0-9]{1}[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{3}">
+      <input id="email" type="email" name="email" placeholder="Example@bmsce.ac.in" size="20px">
 
 
       <!--password label-->
@@ -71,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
       <!--submit button-->
-      <input class="button" type="submit">Submit</button>
+      <input class="button" type="submit" value="Submit">
 
     </form>
 

@@ -1,10 +1,10 @@
 <?php
+session_start();
 
 require_once("configuration/config.php");
 require_once("configuration/auth.php");
 require_once("driver_code/php/retrieval.php");
 
-session_start();
 
 if (!User::isloggedin()) {
     header("Location: login.php");
@@ -27,7 +27,7 @@ if (!User::isloggedin()) {
 <body>
 
     <!--header container-->
-    <?php require('driver_code/html/header.html'); ?>
+    <?php require('driver_code/html/driver_code/html/header.php'); ?>
 
 
     <div class="pallets">
@@ -52,16 +52,17 @@ if (!User::isloggedin()) {
 
 
 
-            <div class="profile_image_container">
+            <!-- <div class="profile_image_container">
                 <div class="profile_image">
+                    <input type="image">
                     <img src="./images/trans_profile_img-removebg-preview.png" alt="PROFILE_PHOTO" id="in_pallet_profile">
                 </div>
-            </div>
+            </div> -->
 
             <div class="name">
                 <?php
-                $res = usn_query($con);
-                echo '<p class="name_">' . strtoupper($res['student_name']) . '</p>' . '<p class="usn_">' . $res['usn'] . '</p>';
+                $res = User::query_all($con, User::$usn);
+                echo '<p class="name_">' . strtoupper($res[1]) . '</p>' . '<p class="usn_">' . $res[0] . '</p>' . '<p class="email_">' . $res[2] . '</p>';
                 ?>
             </div>
 
