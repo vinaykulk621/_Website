@@ -1,14 +1,26 @@
 <?php
-session_start();  //needed here and in index.php file 
+session_start();       //needed here and in index.php file 
 
 require("configuration/auth.php");
 require("configuration/config.php");
 
+// checks if the login button has pressed
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+  //checks if the credentials put by user is legitmate or not
   if (User::login($con, $_POST['usn'], $_POST['email'], $_POST['password'])) {
+
+    // if the user inout is legitmate the session variable 'is_logged_in' to true
     $_SESSION['is_logged_in'] = true;
+
+    // for access of all the information across all the pages we initialize the session variable with the usn of the user
+    $_SESSION['usn'] = $_POST['usn'];
+
+    // head to the profile page
     header("Location: profile.php");
   } else {
+
+    // alert if the credentials are wrong
     echo '<script> alert("wrong credentials") </script>';
   }
 }
@@ -34,7 +46,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     <!--login form-->
+
     <!-- onsubmit="return validateForm()" -->
+    <!-- no need of action attribute since we are processing the form in this page -->
     <form name="login" method="post">
 
       <!--BMS logo-->

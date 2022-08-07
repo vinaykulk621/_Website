@@ -5,7 +5,7 @@ require_once("configuration/config.php");
 require_once("configuration/auth.php");
 require_once("driver_code/php/retrieval.php");
 
-
+// checks if the user is logged in by checking the session variable 'is_logged_in' and heads to the login page if not logged in
 if (!User::isloggedin()) {
     header("Location: login.php");
 }
@@ -27,43 +27,39 @@ if (!User::isloggedin()) {
 <body>
 
     <!--header container-->
-    <?php require('driver_code/html/driver_code/html/header.php'); ?>
+    <?php require('driver_code/html/header.php'); ?>
 
 
     <div class="pallets">
         <!-- student info pallet -->
         <div id="profile_pallet" name="profile_pallet">
 
-            <!-- // -->
-            <!-- Place for image of the student -->
-            <!-- // -->
-            <!-- <?php
-                    //         if (!profile) {
-                    //             echo '';
-                    //         } else {
-                    //             //show profile
-                    //         }
-                    // 
-                    ?> -->
-            <!-- // -->
-            <!-- Place for name of the student -->
-            <!-- // -->
-            <!-- <div id="name"></div> -->
-
-
-
-            <!-- <div class="profile_image_container">
-                <div class="profile_image">
-                    <input type="image">
-                    <img src="./images/trans_profile_img-removebg-preview.png" alt="PROFILE_PHOTO" id="in_pallet_profile">
-                </div>
-            </div> -->
-
+            <!-- the pallet that shows the information of the student -->
             <div class="name">
+
                 <?php
-                $res = User::query_all($con, User::$usn);
-                echo '<p class="name_">' . strtoupper($res[1]) . '</p>' . '<p class="usn_">' . $res[0] . '</p>' . '<p class="email_">' . $res[2] . '</p>';
+
+                // $res has an array of student data that gets data from query_all() method 
+                // query_all takes two input
+                // 1-->connection to database
+                // 2-->the usn of the student wich is stoed in the session variable 'usn'
+                // the contents of the array is accessed by the column name
+                $res = User::query_all($con, $_SESSION['usn']);
+
+                echo
+                '<p class="name_">' .
+                    strtoupper($res->student_name) .
+                    '</p>' .
+                    '<p class="usn_">'
+                    . $res->usn .
+                    '</p>' .
+                    '<p class="email_">' .
+                    $res->student_email .
+                    '</p>' .
+                    '<p class="branch_">' . $res->branch_name .
+                    '</p>';
                 ?>
+
             </div>
 
         </div>

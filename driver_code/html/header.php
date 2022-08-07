@@ -2,64 +2,78 @@
 require_once("./configuration/auth.php");
 ?>
 
-<div class="header" id="header">
+<div class="header">
 
-    <!--bms logo-->
-    <a href="./index.php">
-        <img src="./images/trans_bms_info.png" alt="BMSCE" id="college_logo">
-    </a>
 
-    <!--top right profile photo-->
-    <a href="./profile.php">
-        <img src="./images/trans_profile_img-removebg-preview.png" alt="PROFILE_PHOTO" id="profile_photo">
-    </a>
+    <div class="first_row">
+        <!--bms logo-->
+        <a href="./index.php">
+            <img src="./images/trans_bms_info.png" alt="BMSCE" id="college_logo">
+        </a>
+
+        <!--top right profile photo-->
+        <a href="./profile.php">
+            <img src="./images/trans_profile_img-removebg-preview.png" alt="PROFILE_PHOTO" id="profile_photo">
+        </a>
+    </div>
 
     <!--Navbar container-->
     <div class="navbar">
 
-        <!--Navbar content-->
-        <span class="ho"><a href="./index.php">Home</a></span>
-        <span class="ni"><a href="./campus.php">Campus</a></span>
+        <!-- left_side navigation tabs -->
+        <div class="left_ones">
 
-        <!--dropdown container-->
-        <div class="dropdown">
+            <!--Navbar content-->
+            <span class="ho"><a href="./index.php">Home</a></span>
+            <span class="ni"><a href="./campus.php">Campus</a></span>
 
-            <!--dropdown button-->
-            <span class="ji">
-                <button class="dropbtn">
-                    Exams
-                    <i class="fa fa-caret-down"></i>
-                </button>
-            </span>
+            <!--dropdown container-->
+            <div class="dropdown">
 
-            <!--dropdown content-->
-            <div class="dropdown-content">
-                <span class="hoo"><a href="form1.html">REGULAR</a></li></span>
-                <span class="joo"><a href="form1.html">RE-REGISTER</a></li></span>
-                <span class="poo"><a href="form_fast.html">FAST TRACK</a></span>
-                <span class="ioo"><a href="https://gate.iitkgp.ac.in/" target="_blank">GATE</a></span>
-                <span class="loo">
-                    <a href="https://iimcat.ac.in/per/g01/pub/756/ASM/WebPortal/1/index.php?756@@1@@1" target="_blank">CAT</a>
+                <!--dropdown button-->
+                <span class="ji">
+                    <button class="dropbtn">
+                        Exams
+                        <i class="fa fa-caret-down"></i>
+                    </button>
                 </span>
 
-                <!--dropdown content end-->
+                <!--dropdown content-->
+                <div class="dropdown-content">
+                    <span class="hoo"><a href="form1.html">REGULAR</a></li></span>
+                    <span class="joo"><a href="form1.html">RE-REGISTER</a></li></span>
+                    <span class="poo"><a href="form_fast.html">FAST TRACK</a></span>
+                    <span class="ioo"><a href="https://gate.iitkgp.ac.in/" target="_blank">GATE</a></span>
+                    <span class="loo">
+                        <a href="https://iimcat.ac.in/per/g01/pub/756/ASM/WebPortal/1/index.php?756@@1@@1" target="_blank">CAT</a>
+                    </span>
+
+                    <!--dropdown content end-->
+                </div>
+
+                <!--dropdown container end-->
             </div>
 
-            <!--dropdown container end-->
+            <span class="oop">
+                <a href="./results.html">Results</a>
+            </span>
+
         </div>
 
-        <span class="oop">
-            <a href="./results.html">Results</a>
-        </span>
+        <!-- right_side navigation tabs -->
+        <div class="right_ones">
 
-        <!-- shows the required button depending on the logged in or logged -->
-        <?php
-        if (User::isloggedin()) {
-            echo '<a href="configuration/logout.php" style="float: right;">Logout</a>';
-        } else {
-            echo '<a href="./login.php" style="float: right;">Login</a>';
-        }
-        ?>
+            <!-- shows the required button depending on the logged in or logged -->
+            <?php
+            if (User::isloggedin()) {
+                echo '<a href="configuration/logout.php" style="float: right;">Logout</a>';
+            } else {
+                echo '<a href="./login.php" style="float: right;">Login</a>';
+            }
+            ?>
+
+        </div>
+
         <!--Navbar container end-->
     </div>
 

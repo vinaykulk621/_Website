@@ -5,9 +5,6 @@ session_start();
 require_once("configuration/config.php");
 require_once("configuration/auth.php");
 
-if (!User::isloggedin()) {
-  $_SESSION['is_logged_in'] = false;
-}
 ?>
 
 <!DOCTYPE html>

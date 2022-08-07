@@ -461,9 +461,11 @@ h1 {
   text-decoration: none;
 }
 .name_,
-.usn_ {
+.usn_,
+.email_,
+.branch_ {
   margin: 0;
-  padding: 0;
+  padding: 10px;
   font-size: xx-large;
   font-weight: 500;
 }
