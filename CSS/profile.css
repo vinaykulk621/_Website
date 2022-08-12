@@ -138,17 +138,6 @@ h1 {
 }
 /*profile details section end*/
 
-/*________________profile pallet section start*/
-#profile_pallet:hover {
-  border-radius: 15px;
-  box-shadow: 20px 20px 47px #e6d7d7, -20px -20px 47px #dce2e9;
-  transform: scale(1.1, 1.1);
-  width: 400px;
-  height: 450px;
-  background-color: #f8fafa;
-}
-/*profile pallet section end*/
-
 /*________________application pallet start*/
 #appl_form {
   border-radius: 15px;
@@ -476,4 +465,25 @@ h1 {
   flex-wrap: wrap;
   flex-direction: column;
   margin: 40px;
+}
+table.GeneratedTable {
+  width: 90%;
+  background-color: #ffffff;
+  border-collapse: collapse;
+  border-width: 2px;
+  border-color: #000000;
+  border-style: solid;
+  color: #000000;
+}
+
+table.GeneratedTable td,
+table.GeneratedTable th {
+  border-width: 2px;
+  border-color: #000000;
+  border-style: solid;
+  padding: 3px;
+}
+
+table.GeneratedTable thead {
+  background-color: #ffffff;
 }

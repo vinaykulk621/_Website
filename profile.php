@@ -48,7 +48,9 @@ if (!User::isloggedin()) {
 
                 echo
                 '<p class="name_">' .
-                    strtoupper($res->student_name) .
+                    strtoupper($res->student_first_name) . ' ' .
+                    strtoupper($res->student_middle_name) . ' ' .
+                    strtoupper($res->student_last_name) .
                     '</p>' .
                     '<p class="usn_">'
                     . $res->usn .
@@ -56,7 +58,8 @@ if (!User::isloggedin()) {
                     '<p class="email_">' .
                     $res->student_email .
                     '</p>' .
-                    '<p class="branch_">' . $res->branch_name .
+                    '<p class="branch_">' . $res->department_name .
+                    '</p>' . '<p class="branch_"> SEMESTER: ' . $res->sem .
                     '</p>';
                 ?>
 
@@ -66,7 +69,7 @@ if (!User::isloggedin()) {
 
 
         <!-- results pallete-->
-        <a href="./result.html" class="links_in_pallets">
+        <a href="./result.php" class="links_in_pallets">
             <div id="result" name="result">
                 <h1 class="result_heading">YOUR RESULTS</h1>
                 <img src="./images/results.png" alt="RESULTS" class="results_logo">

@@ -55,6 +55,23 @@ class User
         }
     }
 
+    // function to retrieve all the courses registered by the student
+    public static function query_all_registrd_courses($con, $usn)
+    {
+        if ($con) {
+            $sql = "SELECT result.course_id
+            FROM result,enrolled
+            WHERE result.usn=enrolled.usn ";
+            $query = $con->prepare($sql);
+            $query->setFetchMode(PDO::FETCH_CLASS, 'User');
+            $query->execute();
+        }
+        if ($usr = $query->fetch()) {
+            return $usr;
+        }
+    }
+
+
     // function to check if the user is logged in
     public static function isloggedin()
     {
