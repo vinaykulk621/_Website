@@ -88,7 +88,9 @@ session_start();
                         $res = User::query_all_registrd_courses($con, $_SESSION['usn']);
 
                         foreach ($res as $res) {
-                            echo '<td>' . $res . '</td>';
+                            if ($res != NULL) {
+                                echo '<td>' . $res . '</td>';
+                            }
                         }
                         ?>
                         <!-- <td>Cell</td>
@@ -99,22 +101,22 @@ session_start();
                         <td>Cell</td> -->
                     </tr>
                     <tr>
+                        <!-- <td>Cell</td>
                         <td>Cell</td>
                         <td>Cell</td>
                         <td>Cell</td>
                         <td>Cell</td>
                         <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
+                        <td>Cell</td> -->
                     </tr>
                     <tr>
+                        <!-- <td>Cell</td>
                         <td>Cell</td>
                         <td>Cell</td>
                         <td>Cell</td>
                         <td>Cell</td>
                         <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
+                        <td>Cell</td> -->
                     </tr>
                 </tbody>
             </table>
