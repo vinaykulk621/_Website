@@ -12,6 +12,9 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./images/1200px-BMS_College_of_Engineering.svg.png">
     <link rel="stylesheet" href="./CSS/profile.css">
+    <script src="validate.js">
+        getCorrectGrade();
+    </script>
     <title>BMSCE</title>
 </head>
 <!DOCTYPE html>
@@ -39,8 +42,19 @@ session_start();
     <center>
 
         <body>
+            <?php
+            // get all the semester detail of the student
+            $res = User::query_semester($con, $_SESSION['usn']);
+
+            ?>
             <center>
-                <h5>1ST SEMESTER COMPUTER SCIENCE AND ENGINEERING PROVISIONAL RESULTS ----MAY 2021 </h5>
+                <h5>
+                    SEMESTER
+                    <?php
+                    ?>
+                    <?php
+                    ?> RESULTS
+                </h5>
             </center>
 
 
@@ -48,7 +62,7 @@ session_start();
             <table class="GeneratedTable">
                 <thead>
                     <tr>
-                        <th colspan="6">Student Name :
+                        <th colspan="7">Student Name :
 
                             <!-- to display the name of the student -->
                             <?php
@@ -80,44 +94,59 @@ session_start();
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
 
-                        <!-- To generate dynamic course codes enrolled by the student-->
-                        <?php
+                    <!-- To generate dynamic course codes enrolled by the student-->
+                    <?php
 
-                        $res = User::query_all_registrd_courses($con, $_SESSION['usn']);
+                    // retrieve all data regarding the result of the student
+                    $res = User::query_all_registrd_courses($con, $_SESSION['usn']);
 
-                        foreach ($res as $res) {
-                            if ($res != NULL) {
-                                echo '<td>' . $res . '</td>';
-                            }
-                        }
-                        ?>
-                        <!-- <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td> -->
-                    </tr>
-                    <tr>
-                        <!-- <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td> -->
-                    </tr>
-                    <tr>
-                        <!-- <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td> -->
-                    </tr>
+                    // to print all the data retrived
+                    // each row entry is labled by  <tr>
+                    // each column entry is labled by <td>
+                    // each column data is accessed by the column name
+                    foreach ($res as $res) {
+                        echo '<tr>';
+
+
+                        echo '<td>';
+                        echo $res['course_id'];
+                        echo '</td>';
+
+
+                        echo '<td>';
+                        echo $res['course_name'];
+                        echo '</td>';
+
+
+                        echo '<td>';
+                        echo $res['credit'];
+                        echo '</td>';
+
+
+                        echo '<td>';
+                        echo $res['cie'];
+                        echo '</td>';
+
+
+                        echo '<td>';
+                        echo $res['see'];
+                        echo '</td>';
+
+
+                        echo '<td>';
+                        echo $res['total_marks'];
+                        echo '</td>';
+
+
+                        echo '<td>';
+                        echo $res['grade'];
+                        echo '</td>';
+
+
+                        echo '</tr>';
+                    }
+                    ?>
                 </tbody>
             </table>
 

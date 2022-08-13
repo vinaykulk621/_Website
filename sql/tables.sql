@@ -99,6 +99,8 @@ CREATE TABLE `website`.`result`
     `cie` INT(2) NOT NULL , 
     `see` INT(2) NOT NULL , 
     `total_marks` INT(3) NOT NULL , 
+    `grade` CHAR(1) DEFAULT NULL,
+    `sem` int(1) NOT NULL,
     CHECK (0<=`see`<=50),
     CHECK (0<=`cie`<=50),
     CHECK (0<=`total_marks`<=100),
@@ -270,20 +272,21 @@ INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS001','19CS3NCN
     -- reregister
     -- fastrack
     -- makeup
-INSERT INTO `result`(`usn`, `exam_name`, `course_id`, `cie`, `see`, `total_marks`) VALUES 
-('1BM20CS001','regular','19MA3BSSDM',45,32,77),
-('1BM20CS002','regular','19MA3BSSDM',45,32,77),
-('1BM20CS003','regular','19MA3BSSDM',45,32,77),
-('1BM20CS001','regular','19CS3ESMMC',45,32,77),
-('1BM20CS002','regular','19CS3ESMMC',45,32,77),
-('1BM20CS003','regular','19CS3ESMMC',45,32,77),
-('1BM20CS001','regular','19CS3PCOOJ',45,32,77),
-('1BM20CS002','regular','19CS3PCOOJ',45,32,77),
-('1BM20CS003','regular','19CS3PCOOJ',45,32,77),
-('1BM20CS001','regular','19CS3PCDST',45,32,77),
-('1BM20CS002','regular','19CS3PCDST',45,32,77),
-('1BM20CS003','regular','19CS3PCDST',45,32,77);
+INSERT INTO `result`(`usn`, `exam_name`, `course_id`, `cie`, `see`, `total_marks`, `grade`, `sem`)
+VALUES 
+('1BM20CS001','regular','19MA3BSSDM',45,32,77,'B',3),
+('1BM20CS002','regular','19MA3BSSDM',45,32,77,'B',3),
+('1BM20CS003','regular','19MA3BSSDM',45,32,77,'B',3),
+('1BM20CS001','regular','19CS3ESMMC',45,32,77,'B',3),
+('1BM20CS002','regular','19CS3ESMMC',45,32,77,'B',3),
+('1BM20CS003','regular','19CS3ESMMC',45,32,77,'B',3),
+('1BM20CS001','regular','19CS3PCOOJ',45,32,77,'B',3),
+('1BM20CS002','regular','19CS3PCOOJ',45,32,77,'B',3),
+('1BM20CS003','regular','19CS3PCOOJ',45,32,77,'B',3),
+('1BM20CS001','regular','19CS3PCDST',45,32,77,'B',3),
+('1BM20CS002','regular','19CS3PCDST',45,32,77,'B',3),
+('1BM20CS003','regular','19CS3PCDST',45,32,77,'B',3);
 
 
 
--- aplication
+-- -- aplication
