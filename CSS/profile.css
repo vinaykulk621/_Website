@@ -474,6 +474,7 @@ table.GeneratedTable {
   border-color: #000000;
   border-style: solid;
   color: #000000;
+  margin: auto;
 }
 
 table.GeneratedTable td,
@@ -486,4 +487,10 @@ table.GeneratedTable th {
 
 table.GeneratedTable thead {
   background-color: #ffffff;
+}
+._heading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
 }

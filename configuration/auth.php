@@ -80,9 +80,10 @@ class User
     {
         if ($con) {
             $sql = " 
-            SELECT DISTINCT r.sem
+            SELECT DISTINCT r.sem,r.exam_name
             FROM result r,student s
-            WHERE e.usn='$usn'";
+            WHERE r.usn='$usn'
+            GROUP BY r.sem";
             $query = $con->prepare($sql);
             $query->setFetchMode(PDO::FETCH_ASSOC);
             $query->execute();

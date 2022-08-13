@@ -272,6 +272,8 @@ INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS001','19CS3NCN
     -- reregister
     -- fastrack
     -- makeup
+
+    
 INSERT INTO `result`(`usn`, `exam_name`, `course_id`, `cie`, `see`, `total_marks`, `grade`, `sem`)
 VALUES 
 ('1BM20CS001','regular','19MA3BSSDM',45,32,77,'B',3),
