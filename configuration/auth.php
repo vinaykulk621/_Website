@@ -61,11 +61,51 @@ class User
         if ($con) {
             $sql = " 
             SELECT DISTINCT e.course_id,c.course_name,c.credit,r.cie,r.see,r.total_marks,r.sem
-            FROM enrolled e,course c,result r,student s
+            FROM enrolled e,course c,result r
             WHERE e.usn='$usn' AND
             r.usn='$usn' AND
             e.course_id=c.course_id AND
             r.sem='$sem'";
+            $query = $con->prepare($sql);
+            $query->setFetchMode(PDO::FETCH_ASSOC);
+            $query->execute();
+        }
+        if ($usr = $query->fetchAll()) {
+            return $usr;
+        }
+    }
+
+
+    // function to retrieve the failed subject details of the student 
+    public static function query_all_failed_sub($con, $usn)
+    {
+        if ($con) {
+            $sql = " 
+            SELECT DISTINCT r.sem,r.course_id,c.course_name,c.credit
+            FROM result r,course c
+            WHERE r.usn='$usn' AND
+            r.total_marks<40 AND
+            c.course_id=r.course_id";
+            $query = $con->prepare($sql);
+            $query->setFetchMode(PDO::FETCH_ASSOC);
+            $query->execute();
+        }
+        if ($usr = $query->fetchAll()) {
+            return $usr;
+        }
+    }
+
+
+    // function to retrieve the number of subjects student has failed in 
+    public static function query_numder_of_failed_sub($con, $usn)
+    {
+        if ($con) {
+            $sql = " 
+            SELECT r.course_id
+            FROM result r,course c,enrolled e
+            WHERE r.usn='$usn' AND
+            r.total_marks<40 AND
+            e.course_id=r.course_id";
             $query = $con->prepare($sql);
             $query->setFetchMode(PDO::FETCH_ASSOC);
             $query->execute();
@@ -131,7 +171,7 @@ class User
     }
 
 
-    // method to return the correct and full name of the department the studet belong to 
+    // function to return the correct and full name of the department the studet belong to 
     public static function get_dept_name($name)
     {
         switch ($name) {
@@ -183,7 +223,8 @@ class User
         }
     }
 
-    // method to calculate grade fo the student
+
+    // function to calculate grade fo the student
     public static function calculate_grade($mark)
     {
         if ($mark >= 90) {
@@ -202,6 +243,7 @@ class User
             return "F";
         }
     }
+
 
     // function to check if the user is logged in
     public static function isloggedin()

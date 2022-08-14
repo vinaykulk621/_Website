@@ -307,8 +307,8 @@ require_once("./configuration/auth.php");
 
                 <!--dropdown content-->
                 <div class="dropdown-content">
-                    <span class="hoo"><a href="form1.html">REGULAR</a></li></span>
-                    <span class="joo"><a href="form1.html">RE-REGISTER</a></li></span>
+                    <span class="hoo"><a href="form1.php">REGULAR</a></li></span>
+                    <span class="joo"><a href="form1.php">RE-REGISTER</a></li></span>
                     <span class="poo"><a href="form_fast.html">FAST TRACK</a></span>
                     <span class="ioo"><a href="https://gate.iitkgp.ac.in/" target="_blank">GATE</a></span>
                     <span class="loo">
