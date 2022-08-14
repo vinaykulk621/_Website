@@ -3,8 +3,6 @@ require("configuration/config.php");
 
 class User
 {
-    // public variable for idk what need
-    // public $studentname, $emailid, $password, $usn;
 
     // function for checking the credential of the uer
     public static function login($con,  $usn, $email, $password)
@@ -40,6 +38,7 @@ class User
         return false;
     }
 
+
     // function to retrieve all the info about
     public static function query_all($con, $usn)
     {
@@ -55,8 +54,9 @@ class User
         }
     }
 
+
     // function to retrieve all the course codes registered by the student
-    public static function query_all_registrd_courses($con, $usn,$sem)
+    public static function query_all_registrd_courses($con, $usn, $sem)
     {
         if ($con) {
             $sql = " 
@@ -75,6 +75,7 @@ class User
         }
     }
 
+
     // function to retrieve the semester of the student 
     public static function query_semester($con, $usn)
     {
@@ -92,14 +93,16 @@ class User
         }
     }
 
+
     // function to retrieve all the course names registered by the student
-    public static function query_all_registrd_course_names($con, $usn)
+    public static function query_all_registrd_course_names($con, $usn, $sem)
     {
         if ($con) {
             $sql = "SELECT course.course_name
             FROM course,enrolled
             WHERE enrolled.usn='$usn' AND
-            enrolled.course_id=course.course_id";
+            enrolled.course_id=course.course_id AND
+            enrolled.sem='$sem'";
             $query = $con->prepare($sql);
             $query->setFetchMode(PDO::FETCH_ASSOC);
             $query->execute();

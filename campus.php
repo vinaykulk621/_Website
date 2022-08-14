@@ -1,3 +1,7 @@
+<?php
+session_start();
+require("configuration/auth.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 

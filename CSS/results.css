@@ -43,9 +43,7 @@ body {
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  position: absolute;
-  right: 35px;
-  top: 14px;
+  padding: 5px 20px;
 }
 #container {
   grid-template-columns: 200px 200px 200px 200px 200px;
