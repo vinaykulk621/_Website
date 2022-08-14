@@ -52,14 +52,21 @@ if (!User::isloggedin()) {
                     strtoupper($res->student_middle_name) . ' ' .
                     strtoupper($res->student_last_name) .
                     '</p>' .
-                    '<p class="usn_">'
-                    . $res->usn .
+
+                    '<p class="usn_">' .
+                    $res->usn .
                     '</p>' .
+
                     '<p class="email_">' .
                     $res->student_email .
                     '</p>' .
-                    '<p class="branch_">' . $res->department_name .
-                    '</p>' . '<p class="branch_"> SEMESTER: ' . $res->sem .
+
+                    '<p class="branch_">' .
+                    strtoupper(User::get_dept_name($res->department_name)) .
+                    '</p>' .
+
+                    '<p class="sem_"> SEMESTER: ' .
+                    $res->sem .
                     '</p>';
                 ?>
 

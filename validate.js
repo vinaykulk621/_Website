@@ -61,24 +61,3 @@ function validateForm() {
     return false;
   }
 }
-
-function getCorrectGrade() {
-  var mark = document.getElementById("total_mark");
-  var grade = document.getElementById("_grade_");
-
-  if (mark > 90) {
-    grade.textContent='S';
-  } else if (80 < mark <= 90) {
-    grade.textContent='GK';
-  } else if (70 < mark <= 80) {
-    grade.textContent='B';
-  } else if (60 < mark <= 70) {
-    grade.textContent='C';
-  } else if (50 < mark <= 60) {
-    grade.textContent='D';
-  } else if (40 < mark <= 50) {
-    grade.textContent='E';
-  } else {
-    grade.textContent='F';
-  }
-}

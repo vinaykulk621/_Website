@@ -60,7 +60,7 @@ class User
     {
         if ($con) {
             $sql = " 
-            SELECT DISTINCT e.course_id,c.course_name,c.credit,r.cie,r.see,r.total_marks,r.grade,r.sem
+            SELECT DISTINCT e.course_id,c.course_name,c.credit,r.cie,r.see,r.total_marks,r.sem
             FROM enrolled e,course c,result r,student s
             WHERE e.usn='$usn' AND
             r.usn='$usn' AND
@@ -130,6 +130,78 @@ class User
         }
     }
 
+
+    // method to return the correct and full name of the department the studet belong to 
+    public static function get_dept_name($name)
+    {
+        switch ($name) {
+            case 'CSE':
+                return "COMPUTER SCIENCE AND ENGINEERING";
+                break;
+            case 'ISE':
+                return "INFORMATION SCIENCE AND ENGINEERING";
+                break;
+            case 'CV':
+                return "CIVIL ENGINEERING";
+                break;
+            case 'ETE':
+                return "Electronics and Instrumentation Engineering";
+                break;
+            case 'MCA':
+                return "Computer Applications (MCA)";
+                break;
+            case 'MECH':
+                return "Mechanical Engineering";
+                break;
+            case 'EEE':
+                return "Electrical and Electronics Engineering";
+                break;
+            case 'EIE':
+                return "Electronics and Instrumentation Engineering";
+                break;
+            case 'ECE':
+                return "Electronics and Communication Engineering";
+                break;
+            case 'ML':
+                return "Medical Electronics Engineering";
+                break;
+            case 'IEM':
+                return "Industrial Engineering and Management";
+                break;
+            case 'CH':
+                return "Chemical Engineering";
+                break;
+            case 'BT':
+                return "Bio-Technology";
+                break;
+            case 'AS':
+                return "Aerospace Engineering";
+                break;
+            case 'AIML':
+                return "Machine Learning";
+                break;
+        }
+    }
+
+    // method to calculate grade fo the student
+    public static function calculate_grade($mark)
+    {
+        if ($mark >= 90) {
+            return "S";
+        } elseif ($mark >= 80 && $mark <= 89) {
+            return "A";
+        } elseif ($mark >= 70 && $mark <= 79) {
+            return "B";
+        } elseif ($mark >= 60 && $mark <= 69) {
+            return "C";
+        } elseif ($mark >= 50 && $mark <= 59) {
+            return "D";
+        } elseif ($mark >= 40 && $mark <= 49) {
+            return "E";
+        } else {
+            return "F";
+        }
+    }
 
     // function to check if the user is logged in
     public static function isloggedin()

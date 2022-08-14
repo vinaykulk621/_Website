@@ -192,11 +192,13 @@ h1 {
 .name_,
 .usn_,
 .email_,
-.branch_ {
+.branch_,
+.sem_ {
   margin: 0;
   padding: 10px;
   font-size: xx-large;
   font-weight: 500;
+  text-align: center;
 }
 .name {
   display: flex;
@@ -230,6 +232,12 @@ table.GeneratedTable thead {
 }
 ._heading {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
+  margin: 10px;
+}
+.name_usn{
   align-items: center;
   justify-content: center;
   font-size: x-large;

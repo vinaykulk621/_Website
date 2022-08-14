@@ -22,6 +22,7 @@ session_start();
     ?>
 
     <body>
+        <br><br>
         <?php
 
         // get all the semesters and exam name detail of the student
@@ -43,8 +44,9 @@ session_start();
 
                 <!-- printing the semester -->
                 <?php
-                echo 'SEMESTER :' . $outputsem[$i] . ' ';
+                echo 'SEMESTER-' . $outputsem[$i] . ' ';
                 echo strtoupper($outputexam[$i]) . ' EXAM';
+
                 ?>
             </h5>
 
@@ -54,11 +56,9 @@ session_start();
                 <!-- head of the table -->
                 <thead>
                     <tr>
-                        <th colspan="7">
+                        <th colspan="7" class="name_usn">
 
                             <!-- to display the name of the student -->
-                            Student Name :
-
                             <?php
                             $res = User::query_all($con, $_SESSION['usn']);
 
@@ -69,11 +69,11 @@ session_start();
                             ?>
 
                             <!-- to display the usn of the student -->
-                            USN:
+                            (
                             <?php
                             echo $res->usn;
                             ?>
-
+                            )
                         </th>
                     </tr>
 
@@ -132,10 +132,6 @@ session_start();
                     // $total_marks-->array of all enrolled courses toatal marks
                     $total_marks = array_column($childres, 'total_marks');
 
-
-                    // $grade-->array of all enrolled courses grade
-                    $grade = array_column($childres, 'grade');
-
                     for ($j = 0; $j < $ittertation; $j++) {
                         echo '<tr>';
 
@@ -171,7 +167,7 @@ session_start();
 
 
                         echo '<td>';
-                        echo $grade[$j];
+                        echo User::calculate_grade($total_marks[$j]);
                         echo '</td>';
 
 
@@ -180,6 +176,7 @@ session_start();
                     ?>
                 </tbody>
             </table>
+            <br><br><br>
         <?php
         endfor;
         ?>
