@@ -79,6 +79,7 @@ CREATE TABLE `website`.`enrolled`
     `usn` VARCHAR(10) NOT NULL ,
     `course_id` VARCHAR(15) NOT NULL ,
     `fid` VARCHAR(10) NOT NULL ,
+    `sem` int(1) NOT NULL,
     PRIMARY KEY(`usn`(10),`course_id`(15)),
     FOREIGN key(`usn`) REFERENCES `student`(`usn`) 
     ON DELETE CASCADE ON UPDATE CASCADE,
@@ -132,23 +133,24 @@ ENGINE = InnoDB ;
 
 
 -- inserting values into department table
-INSERT INTO `department`(`department_name`, `hod`) VALUES ('CV','H. B. NAGARAJ');
-INSERT INTO `department`(`department_name`, `hod`) VALUES ('ETE','N SRINIVASA RAO');
-INSERT INTO `department`(`department_name`, `hod`) VALUES ('MCA','Ch. Ram Mohan Reddy');
-INSERT INTO `department`(`department_name`, `hod`) VALUES ('MECH','G. GIRIDHARA');
-INSERT INTO `department`(`department_name`, `hod`) VALUES ('ISE','P JAYAREKHA');
-INSERT INTO `department`(`department_name`, `hod`) VALUES ('EEE','A.N.NAGASHREE');
-INSERT INTO `department`(`department_name`, `hod`) VALUES ('EIE','SANTOSH R. DESAI');
-INSERT INTO `department`(`department_name`, `hod`) VALUES ('MATH','Veena Jawali');
-INSERT INTO `department`(`department_name`, `hod`) VALUES ('ECE','Siddappaji');
-INSERT INTO `department`(`department_name`, `hod`) VALUES ('ML','Joshi Manisha S');
-INSERT INTO `department`(`department_name`, `hod`) VALUES ('PHY','Murugendrappa M V');
-INSERT INTO `department`(`department_name`, `hod`) VALUES ('IEM','B.R.Ramji');
-INSERT INTO `department`(`department_name`, `hod`) VALUES ('CH','Y. K. Suneetha');
-INSERT INTO `department`(`department_name`, `hod`) VALUES ('CSE','JYOTHI S. NAYAK');
-INSERT INTO `department`(`department_name`, `hod`) VALUES ('BT','CHANDRAPRASAD MS');
-INSERT INTO `department`(`department_name`, `hod`) VALUES ('AS','Rammohan Y.S');
-INSERT INTO `department`(`department_name`, `hod`) VALUES ('AIML','Gowrishankar');
+INSERT INTO `department`(`department_name`, `hod`) VALUES 
+('CV','H. B. NAGARAJ'),
+('ETE','N SRINIVASA RAO'),
+('MCA','Ch. Ram Mohan Reddy'),
+('MECH','G. GIRIDHARA'),
+('ISE','P JAYAREKHA'),
+('EEE','A.N.NAGASHREE'),
+('EIE','SANTOSH R. DESAI'),
+('MATH','Veena Jawali'),
+('ECE','Siddappaji'),
+('ML','Joshi Manisha S'),
+('PHY','Murugendrappa M V'),
+('IEM','B.R.Ramji'),
+('CH','Y. K. Suneetha'),
+('CSE','JYOTHI S. NAYAK'),
+('BT','CHANDRAPRASAD MS'),
+('AS','Rammohan Y.S'),
+('AIML','Gowrishankar');
 
 
 
@@ -163,23 +165,27 @@ INSERT INTO `student`(`usn`, `student_email`, `student_first_name`, `student_mid
 
 
 -- inserting into course table
-INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `sem`) VALUES ('19MA3BSSDM','Statistics and Discrete Mathematics','CSE',4,3);
-INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `sem`) VALUES ('19CS3ESMMC','Microprocessors and Microcontrollers','CSE',4,3);
-INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `sem`) VALUES ('19CS3PCOOJ','Object Oriented Java Programming','CSE',4,3);
-INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `sem`) VALUES ('19CS3PCDST','Data Structures','CSE',3,3);
-INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `sem`) VALUES ('19CS3PCCOA','Computer Organization and Architecture','CSE','3','3');
-INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `sem`) VALUES ('19CS3PCLOD','Logic Design','CSE',4,3);
-INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `sem`) VALUES ('19CS3PWPW1','Project Work-1','CSE',2,3);
-INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `sem`) VALUES ('19CS3NCNC3','Physical Activity (Sports/ Yoga Etc.)','CSE',0,3);
-INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `sem`) VALUES ('19HS3ICEVS','Environmental Studies','CSE',1,3);
-INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `sem`) VALUES ('19MA4BSLIA','Linear Algebra','CSE',4,4);
-INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `sem`) VALUES ('19CS4PCTFC','Theoretical Foundations of Computations','CSE',4,4);
-INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `sem`) VALUES ('19CS4PCDBM','Database Management Systems','CSE',4,4);
-INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `sem`) VALUES ('19CS4PCADA','Analysis and Design of Algorithms','CSE',4,4);
-INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `sem`) VALUES ('19CS4PCOPS','Operating Systems','CSE',4,4);
-INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `sem`) VALUES ('19CS4SRSTI','Seminar Technical / Internship','CSE',1,4);
-INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `sem`) VALUES ('19CS4PWPW2','Project Work-2','CSE',2,4);
-INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `sem`) VALUES ('19CS4NCNC4','Cultural Activity (Music/Dance etc.)','CSE',0,4);
+INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `sem`) VALUES
+-- 3rd sem
+('19MA3BSSDM','Statistics and Discrete Mathematics','CSE',4,3),
+('19CS3ESMMC','Microprocessors and Microcontrollers','CSE',4,3),
+('19CS3PCOOJ','Object Oriented Java Programming','CSE',4,3),
+('19CS3PCDST','Data Structures','CSE',3,3),
+('19CS3PCCOA','Computer Organization and Architecture','CSE',3,3),
+('19CS3PCLOD','Logic Design','CSE',4,3),
+('19CS3PWPW1','Project Work-1','CSE',2,3),
+('19CS3NCNC3','Physical Activity (Sports/ Yoga Etc.)','CSE',0,3),
+('19HS3ICEVS','Environmental Studies','CSE',1,3),
+
+-- 4th sem
+('19MA4BSLIA','Linear Algebra','CSE',4,4),
+('19CS4PCTFC','Theoretical Foundations of Computations','CSE',4,4),
+('19CS4PCDBM','Database Management Systems','CSE',4,4),
+('19CS4PCADA','Analysis and Design of Algorithms','CSE',4,4),
+('19CS4PCOPS','Operating Systems','CSE',4,4),
+('19CS4SRSTI','Seminar Technical / Internship','CSE',1,4),
+('19CS4PWPW2','Project Work-2','CSE',2,4),
+('19CS4NCNC4','Cultural Activity (Music/Dance etc.)','CSE',0,4);
 
 
 
@@ -234,35 +240,74 @@ INSERT INTO `course_handled`(`fid`, `course_id`) VALUES
 ('CSE019','19CS3PCOOJ'), 
 ('CSE020','19CS3ESMMC'),
 ('CSE021','19MA3BSSDM'),
-('CSE022','19CS4NCNC4');
+('CSE022','19CS4NCNC4'),
+('CSE001','19MA4BSLIA'),
+('CSE002','19CS4PCTFC'),
+('CSE003','19CS4PCDBM'),
+('CSE004','19CS4PCADA'),
+('CSE005','19CS4PCOPS'),
+('CSE006','19CS4SRSTI'),
+('CSE007','19CS4PWPW2'),
+('CSE008','19CS4NCNC4');
 
 
 
 -- inserting into enrolled table
+INSERT INTO `enrolled`(`usn`, `course_id`, `fid`, `sem`) VALUES
 -- 3rd sem
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS001','19MA3BSSDM','CSE021');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS002','19MA3BSSDM','CSE021');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS003','19MA3BSSDM','CSE021');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS001','19CS3ESMMC','CSE015');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS002','19CS3ESMMC','CSE015');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS003','19CS3ESMMC','CSE015');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS001','19CS3PCOOJ','CSE019');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS002','19CS3PCOOJ','CSE019');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS003','19CS3PCOOJ','CSE019');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS001','19CS3PCDST','CSE014');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS002','19CS3PCDST','CSE016');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS003','19CS3PCDST','CSE018');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS001','19CS3PCCOA','CSE011');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS002','19CS3PCCOA','CSE012');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS003','19CS3PCCOA','CSE013');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS001','19CS3PCLOD','CSE007');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS002','19CS3PCLOD','CSE007');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS003','19CS3PCLOD','CSE008');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS001','19CS3PWPW1','CSE003');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS002','19CS3PWPW1','CSE003');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS003','19CS3PWPW1','CSE003');
-INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS001','19CS3NCNC3','CSE017');
+('1BM20CS001','19MA3BSSDM','CSE021',3),
+('1BM20CS001','19CS3ESMMC','CSE015',3),
+('1BM20CS001','19CS3PCOOJ','CSE019',3),
+('1BM20CS001','19CS3PWPW1','CSE003',3),
+('1BM20CS001','19CS3PCDST','CSE014',3),
+('1BM20CS001','19CS3PCCOA','CSE011',3),
+('1BM20CS001','19CS3PCLOD','CSE007',3),
 
+('1BM20CS002','19MA3BSSDM','CSE021',3),
+('1BM20CS002','19CS3ESMMC','CSE015',3),
+('1BM20CS002','19CS3PCOOJ','CSE019',3),
+('1BM20CS002','19CS3PWPW1','CSE003',3),
+('1BM20CS002','19CS3PCDST','CSE016',3),
+('1BM20CS002','19CS3PCCOA','CSE012',3),
+('1BM20CS002','19CS3PCLOD','CSE007',3),
+
+('1BM20CS003','19MA3BSSDM','CSE021',3),
+('1BM20CS003','19CS3ESMMC','CSE015',3),
+('1BM20CS003','19CS3PCOOJ','CSE019',3),
+('1BM20CS003','19CS3PWPW1','CSE003',3),
+('1BM20CS003','19CS3PCDST','CSE018',3),
+('1BM20CS003','19CS3PCCOA','CSE013',3),
+('1BM20CS003','19CS3PCLOD','CSE008',3),
+
+
+
+-- 4th sem
+('1BM20CS001','19MA4BSLIA','CSE001',4),
+('1BM20CS001','19CS4PCTFC','CSE002',4),
+('1BM20CS001','19CS4PCDBM','CSE003',4),
+('1BM20CS001','19CS4PCADA','CSE004',4),
+('1BM20CS001','19CS4PCOPS','CSE005',4),
+('1BM20CS001','19CS4SRSTI','CSE006',4),
+('1BM20CS001','19CS4PWPW2','CSE007',4),
+('1BM20CS001','19CS4NCNC4','CSE008',4),
+
+('1BM20CS002','19MA4BSLIA','CSE001',4),
+('1BM20CS002','19CS4PCTFC','CSE002',4),
+('1BM20CS002','19CS4PCDBM','CSE003',4),
+('1BM20CS002','19CS4PCADA','CSE004',4),
+('1BM20CS002','19CS4PCOPS','CSE005',4),
+('1BM20CS002','19CS4SRSTI','CSE006',4),
+('1BM20CS002','19CS4PWPW2','CSE007',4),
+('1BM20CS002','19CS4NCNC4','CSE008',4),
+
+('1BM20CS003','19MA4BSLIA','CSE001',4),
+('1BM20CS003','19CS4PCTFC','CSE002',4),
+('1BM20CS003','19CS4PCDBM','CSE003',4),
+('1BM20CS003','19CS4PCADA','CSE004',4),
+('1BM20CS003','19CS4PCOPS','CSE005',4),
+('1BM20CS003','19CS4SRSTI','CSE006',4),
+('1BM20CS003','19CS4PWPW2','CSE007',4),
+('1BM20CS003','19CS4NCNC4','CSE008',4);
 
 
 
@@ -273,22 +318,62 @@ INSERT INTO `enrolled`(`usn`, `course_id`, `fid`) VALUES ('1BM20CS001','19CS3NCN
     -- fastrack
     -- makeup
 
-    
 INSERT INTO `result`(`usn`, `exam_name`, `course_id`, `cie`, `see`, `total_marks`, `grade`, `sem`)
 VALUES 
+-- 3rd sem
 ('1BM20CS001','regular','19MA3BSSDM',45,32,77,'B',3),
-('1BM20CS002','regular','19MA3BSSDM',45,32,77,'B',3),
-('1BM20CS003','regular','19MA3BSSDM',45,32,77,'B',3),
 ('1BM20CS001','regular','19CS3ESMMC',45,32,77,'B',3),
-('1BM20CS002','regular','19CS3ESMMC',45,32,77,'B',3),
-('1BM20CS003','regular','19CS3ESMMC',45,32,77,'B',3),
 ('1BM20CS001','regular','19CS3PCOOJ',45,32,77,'B',3),
-('1BM20CS002','regular','19CS3PCOOJ',45,32,77,'B',3),
-('1BM20CS003','regular','19CS3PCOOJ',45,32,77,'B',3),
+('1BM20CS001','regular','19CS3PWPW1',45,32,77,'B',3),
 ('1BM20CS001','regular','19CS3PCDST',45,32,77,'B',3),
-('1BM20CS002','regular','19CS3PCDST',45,32,77,'B',3),
-('1BM20CS003','regular','19CS3PCDST',45,32,77,'B',3);
+('1BM20CS001','regular','19CS3PCCOA',45,32,77,'B',3),
+('1BM20CS001','regular','19CS3PCLOD',45,32,77,'B',3),
 
+('1BM20CS002','regular','19MA3BSSDM',45,32,77,'B',3),
+('1BM20CS002','regular','19CS3ESMMC',45,32,77,'B',3),
+('1BM20CS002','regular','19CS3PCOOJ',45,32,77,'B',3),
+('1BM20CS002','regular','19CS3PWPW1',45,32,77,'B',3),
+('1BM20CS002','regular','19CS3PCCOA',45,32,77,'B',3),
+('1BM20CS002','regular','19CS3PCDST',45,32,77,'B',3),
+('1BM20CS002','regular','19CS3PCLOD',45,32,77,'B',3),
+
+('1BM20CS003','regular','19MA3BSSDM',45,32,77,'B',3),
+('1BM20CS003','regular','19CS3ESMMC',45,32,77,'B',3),
+('1BM20CS003','regular','19CS3PCOOJ',45,32,77,'B',3),
+('1BM20CS003','regular','19CS3PWPW1',45,32,77,'B',3),
+('1BM20CS003','regular','19CS3PCDST',45,32,77,'B',3),
+('1BM20CS003','regular','19CS3PCCOA',45,32,77,'B',3),
+('1BM20CS003','regular','19CS3PCLOD',45,32,77,'B',3),
+
+
+-- 4th sem
+('1BM20CS001','regular','19MA4BSLIA',45,32,77,'B',4),
+('1BM20CS001','regular','19CS4PCTFC',45,32,77,'B',4),
+('1BM20CS001','regular','19CS4PCDBM',45,32,77,'B',4),
+('1BM20CS001','regular','19CS4PCADA',45,32,77,'B',4),
+('1BM20CS001','regular','19CS4PCOPS',45,32,77,'B',4),
+('1BM20CS001','regular','19CS4SRSTI',45,32,77,'B',4),
+('1BM20CS001','regular','19CS4PWPW2',45,32,77,'B',4),
+('1BM20CS001','regular','19CS4NCNC4',45,32,77,'B',4),
+
+
+('1BM20CS002','regular','19MA4BSLIA',45,32,77,'B',4),
+('1BM20CS002','regular','19CS4PCTFC',45,32,77,'B',4),
+('1BM20CS002','regular','19CS4PCDBM',45,32,77,'B',4),
+('1BM20CS002','regular','19CS4PCADA',45,32,77,'B',4),
+('1BM20CS002','regular','19CS4PCOPS',45,32,77,'B',4),
+('1BM20CS002','regular','19CS4SRSTI',45,32,77,'B',4),
+('1BM20CS002','regular','19CS4PWPW2',45,32,77,'B',4),
+('1BM20CS002','regular','19CS4NCNC4',45,32,77,'B',4),
+
+('1BM20CS003','regular','19MA4BSLIA',45,32,77,'B',4),
+('1BM20CS003','regular','19CS4PCTFC',45,32,77,'B',4),
+('1BM20CS003','regular','19CS4PCDBM',45,32,77,'B',4),
+('1BM20CS003','regular','19CS4PCADA',45,32,77,'B',4),
+('1BM20CS003','regular','19CS4PCOPS',45,32,77,'B',4),
+('1BM20CS003','regular','19CS4SRSTI',45,32,77,'B',4),
+('1BM20CS003','regular','19CS4PWPW2',45,32,77,'B',4),
+('1BM20CS003','regular','19CS4NCNC4',45,32,77,'B',4);
 
 
 -- -- aplication

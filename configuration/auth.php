@@ -56,16 +56,16 @@ class User
     }
 
     // function to retrieve all the course codes registered by the student
-    public static function query_all_registrd_courses($con, $usn)
+    public static function query_all_registrd_courses($con, $usn,$sem)
     {
         if ($con) {
             $sql = " 
-            SELECT DISTINCT c.course_name,e.course_id,c.credit,r.cie,r.see,r.total_marks,r.grade
+            SELECT DISTINCT e.course_id,c.course_name,c.credit,r.cie,r.see,r.total_marks,r.grade,r.sem
             FROM enrolled e,course c,result r,student s
             WHERE e.usn='$usn' AND
-            e.usn=r.usn AND
+            r.usn='$usn' AND
             e.course_id=c.course_id AND
-            s.sem=c.sem";
+            r.sem='$sem'";
             $query = $con->prepare($sql);
             $query->setFetchMode(PDO::FETCH_ASSOC);
             $query->execute();
@@ -82,8 +82,7 @@ class User
             $sql = " 
             SELECT DISTINCT r.sem,r.exam_name
             FROM result r,student s
-            WHERE r.usn='$usn'
-            GROUP BY r.sem";
+            WHERE r.usn='$usn'";
             $query = $con->prepare($sql);
             $query->setFetchMode(PDO::FETCH_ASSOC);
             $query->execute();

@@ -38,20 +38,24 @@ session_start();
     <body>
         <?php
         // get all the semester detail of the student
-        $res = User::query_semester($con, $_SESSION['usn']);
-        foreach ($res as $res) :
+        $parentres = User::query_semester($con, $_SESSION['usn']);
+        $key='sem';
+        $key1='exam_name';
+        $output = array_column($parentres, $key);
+        $outputexam = array_column($parentres, $key);
+        // var_dump($output);
+        foreach ($output as $output => $pare) :
         ?>
             <h5 class="_heading">
                 <!-- printing the semester -->
                 <?php
-                echo 'SEMESTER :' . $res["sem"];
+                echo 'SEMESTER :' . $pare;
                 ?>
 
                 <!-- printing type of exam the result is for -->
-                <?php
+                <!-- <?php
 
-                echo strtoupper($res["exam_name"]) . ' EXAM RESULTS';
-                ?>
+                ?> -->
             </h5>
 
             <table class="GeneratedTable">
@@ -94,48 +98,48 @@ session_start();
                     <?php
 
                     // retrieve all data regarding the result of the student
-                    $res = User::query_all_registrd_courses($con, $_SESSION['usn']);
+                    $childres = User::query_all_registrd_courses($con, $_SESSION['usn'], $pare);
 
                     // to print all the data retrived
                     // each row entry is labled by  <tr>
                     // each column entry is labled by <td>
                     // each column data is accessed by the column name
-                    foreach ($res as $res) {
+                    foreach ($childres as $childres) {
                         echo '<tr>';
 
 
                         echo '<td>';
-                        echo $res['course_id'];
+                        echo $childres['course_id'];
                         echo '</td>';
 
 
                         echo '<td>';
-                        echo $res['course_name'];
+                        echo $childres['course_name'];
                         echo '</td>';
 
 
                         echo '<td>';
-                        echo $res['credit'];
+                        echo $childres['credit'];
                         echo '</td>';
 
 
                         echo '<td>';
-                        echo $res['cie'];
+                        echo $childres['cie'];
                         echo '</td>';
 
 
                         echo '<td>';
-                        echo $res['see'];
+                        echo $childres['see'];
                         echo '</td>';
 
 
                         echo '<td>';
-                        echo $res['total_marks'];
+                        echo $childres['total_marks'];
                         echo '</td>';
 
 
                         echo '<td>';
-                        echo $res['grade'];
+                        echo $childres['grade'];
                         echo '</td>';
 
 
