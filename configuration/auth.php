@@ -39,40 +39,6 @@ class User
     }
 
 
-    // function for checking the credential of the uer
-    public static function facculty_login($con, $email, $password)
-    {
-        // sql statement for retrieving data of the student
-        $sql = "SELECT * 
-        FROM facculty 
-        WHERE email=:email";
-
-        // prepare the sql statement
-        $query = $con->prepare($sql);
-
-        // binds the value of usn 
-        $query->bindValue(':email', $email, PDO::PARAM_STR);
-
-        // it tells php to return the data as an object of class user
-        $query->setFetchMode(PDO::FETCH_CLASS, 'User');
-
-        // this statement return a boolean value
-        $query->execute();
-
-        // if the returned value is true i.e; there exist a row which has usn same as the usn entered by the user  
-        if ($user = $query->fetch()) {
-
-            // check the returned value from the database with the entered value
-            if ($user->facculty_email_id == $email &&  $user->password == $password) {
-                // if the user is authenticated then return true
-                return true;
-            }
-        }
-
-        // return false if any of the condition above fails to satisfy
-        return false;
-    }
-
     // function to retrieve all the info about
     public static function query_all($con, $usn)
     {
