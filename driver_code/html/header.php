@@ -169,38 +169,21 @@ require_once("./configuration/auth.php");
             width: 80px;
         }
 
-        .hoo::after {
+        .oop::after {
             content: "";
             background-color: rgb(28, 183, 240);
             width: 0px;
             height: 4px;
             border-radius: 4px;
             position: absolute;
-            top: 33px;
-            left: 60px;
+            top: 111px;
+            left: 367px;
             transform: translateX(-50%);
             transition: all 0.5s;
         }
 
-        .hoo:hover::after {
-            width: 80px;
-        }
-
-        .joo::after {
-            content: "";
-            background-color: rgb(28, 183, 240);
-            width: 0px;
-            height: 4px;
-            border-radius: 4px;
-            position: absolute;
-            top: 80px;
-            left: 78px;
-            transform: translateX(-50%);
-            transition: all 0.5s;
-        }
-
-        .joo:hover::after {
-            width: 115px;
+        .oop:hover::after {
+            width: 75px;
         }
 
         .poo::after {
@@ -218,57 +201,6 @@ require_once("./configuration/auth.php");
 
         .poo:hover::after {
             width: 105px;
-        }
-
-        .ioo::after {
-            content: "";
-            background-color: rgb(28, 183, 240);
-            width: 0px;
-            height: 4px;
-            border-radius: 4px;
-            position: absolute;
-            top: 167px;
-            left: 40px;
-            transform: translateX(-50%);
-            transition: all 0.5s;
-        }
-
-        .ioo:hover::after {
-            width: 40px;
-        }
-
-        .loo::after {
-            content: "";
-            background-color: rgb(28, 183, 240);
-            width: 0px;
-            height: 4px;
-            border-radius: 4px;
-            position: absolute;
-            top: 210px;
-            left: 35px;
-            transform: translateX(-50%);
-            transition: all 0.5s;
-        }
-
-        .loo:hover::after {
-            width: 35px;
-        }
-
-        .oop::after {
-            content: "";
-            background-color: rgb(28, 183, 240);
-            width: 0px;
-            height: 4px;
-            border-radius: 4px;
-            position: absolute;
-            top: 111px;
-            left: 367px;
-            transform: translateX(-50%);
-            transition: all 0.5s;
-        }
-
-        .oop:hover::after {
-            width: 75px;
         }
     </style>
 
@@ -307,14 +239,7 @@ require_once("./configuration/auth.php");
 
                 <!--dropdown content-->
                 <div class="dropdown-content">
-                    <span class="hoo"><a href="applicationform.php">REGULAR</a></li></span>
-                    <span class="joo"><a href="applicationform.php">RE-REGISTER</a></li></span>
                     <span class="poo"><a href="form_fast.html">FAST TRACK</a></span>
-                    <span class="ioo"><a href="https://gate.iitkgp.ac.in/" target="_blank">GATE</a></span>
-                    <span class="loo">
-                        <a href="https://iimcat.ac.in/per/g01/pub/756/ASM/WebPortal/1/index.php?756@@1@@1" target="_blank">CAT</a>
-                    </span>
-
                     <!--dropdown content end-->
                 </div>
 
