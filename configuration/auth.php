@@ -275,20 +275,19 @@ class User
             SELECT r.course_id
             FROM course c,enrolled e,result r,aplication a
             WHERE a.usn='$usn' AND
-            a.course_id NOT IN
+            a.course_id IN
                 (SELECT DISTINCT r.course_id
-                FROM result r,course c
+                FROM result r
                 WHERE r.usn='$usn' AND
-                r.total_marks<40 AND
-                c.course_id=r.course_id)";
+                r.total_marks<40)";
             $query = $con->prepare($sql);
             $query->setFetchMode(PDO::FETCH_ASSOC);
             $query->execute();
         }
-        if (!$query->fetchAll()) {
-            $_SESSION['has_applied_for_fastrack'] = true;
+        if ($query->fetchAll()) {
+            return true;
         }
-        $_SESSION['has_applied_for_fastrack'] = false;
+        return false;
     }
 
     // function to check if the user is logged in

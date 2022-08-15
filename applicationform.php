@@ -1,7 +1,6 @@
 <?php
 session_start();
-require('configuration/auth.php');
-$_SESSION['has_applied_for_fastrack'] = User::query_if_application_submitted_for_fastrack($con, $_SESSION['usn']);
+// require('configuration/auth.php');
 
 if ($_SESSION['has_applied_for_fastrack']) {
   header('Location: applied_form.php');
@@ -260,6 +259,7 @@ if ($_SESSION['has_applied_for_fastrack']) {
             $query = $con->prepare($sql);
             $query->execute();
           }
+          $_SESSION['has_applied_for_fastrack'] = true;
           header('Location: applied_form.php');
         }
       }

@@ -10,6 +10,8 @@ if (!User::isloggedin()) {
     header("Location: login.php");
 }
 
+// check if student has already applied for the fastrack exam aplication
+$_SESSION['has_applied_for_fastrack'] = User::query_if_application_submitted_for_fastrack($con, $_SESSION['usn']);
 ?>
 
 <!DOCTYPE html>
