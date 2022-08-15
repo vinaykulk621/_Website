@@ -60,11 +60,12 @@ class User
     {
         if ($con) {
             $sql = " 
-            SELECT DISTINCT e.course_id,c.course_name,c.credit,r.cie,r.see,r.total_marks,r.sem
+            SELECT DISTINCT r.course_id,c.course_name,c.credit,r.cie,r.see,r.total_marks,r.sem
             FROM enrolled e,course c,result r
             WHERE e.usn='$usn' AND
             r.usn='$usn' AND
             e.course_id=c.course_id AND
+            r.course_id=e.course_id AND
             r.sem='$sem'";
             $query = $con->prepare($sql);
             $query->setFetchMode(PDO::FETCH_ASSOC);
@@ -77,7 +78,28 @@ class User
 
 
     // function to retrieve the failed subject details of the student 
-    public static function query_all_failed_sub($con, $usn)
+    public static function query_all_failed_sub($con, $usn, $sem)
+    {
+        if ($con) {
+            $sql = " 
+            SELECT DISTINCT r.sem,r.course_id,c.course_name,c.credit
+            FROM result r,course c
+            WHERE r.usn='$usn' AND
+            r.total_marks<40 AND
+            r.sem='$sem' AND
+            c.course_id=r.course_id";
+            $query = $con->prepare($sql);
+            $query->setFetchMode(PDO::FETCH_ASSOC);
+            $query->execute();
+        }
+        if ($usr = $query->fetchAll()) {
+            return $usr;
+        }
+    }
+
+
+    // function to retrieve the failed subject irrespective of the semester  
+    public static function query_all_failed_sub_irrespective_of_sem($con, $usn)
     {
         if ($con) {
             $sql = " 
@@ -97,15 +119,15 @@ class User
 
 
     // function to retrieve the number of subjects student has failed in 
-    public static function query_numder_of_failed_sub($con, $usn)
+    public static function query_course_id_of_failed_sub($con, $usn, $sem)
     {
         if ($con) {
             $sql = " 
-            SELECT r.course_id
-            FROM result r,course c,enrolled e
+            SELECT DISTINCT r.course_id
+            FROM result r,course c
             WHERE r.usn='$usn' AND
             r.total_marks<40 AND
-            e.course_id=r.course_id";
+            r.sem='$sem'";
             $query = $con->prepare($sql);
             $query->setFetchMode(PDO::FETCH_ASSOC);
             $query->execute();
@@ -138,11 +160,13 @@ class User
     public static function query_all_registrd_course_names($con, $usn, $sem)
     {
         if ($con) {
-            $sql = "SELECT course.course_name
-            FROM course,enrolled
-            WHERE enrolled.usn='$usn' AND
-            enrolled.course_id=course.course_id AND
-            enrolled.sem='$sem'";
+            $sql = "
+            SELECT DISTINCT c.course_name
+            FROM course c,enrolled e
+            WHERE e.usn='$usn' AND
+            e.course_id=c.course_id AND
+            e.sem='$sem' AND
+            c.sem='$sem'";
             $query = $con->prepare($sql);
             $query->setFetchMode(PDO::FETCH_ASSOC);
             $query->execute();
@@ -244,6 +268,28 @@ class User
         }
     }
 
+    public static function query_if_application_submitted_for_fastrack($con, $usn)
+    {
+        if ($con) {
+            $sql = "
+            SELECT r.course_id
+            FROM course c,enrolled e,result r,aplication a
+            WHERE a.usn='$usn' AND
+            a.course_id NOT IN
+                (SELECT DISTINCT r.course_id
+                FROM result r,course c
+                WHERE r.usn='$usn' AND
+                r.total_marks<40 AND
+                c.course_id=r.course_id)";
+            $query = $con->prepare($sql);
+            $query->setFetchMode(PDO::FETCH_ASSOC);
+            $query->execute();
+        }
+        if (!$query->fetchAll()) {
+            $_SESSION['has_applied_for_fastrack'] = true;
+        }
+        $_SESSION['has_applied_for_fastrack'] = false;
+    }
 
     // function to check if the user is logged in
     public static function isloggedin()

@@ -36,7 +36,8 @@ session_start();
 
         // loop to create all the tables of the result sheet
         // the loop itterates over how many semester the student has completed
-        for ($i = 0; $i < count($outputsem); $i++) :
+        $ittrt= count($outputsem);
+        for ($i = 0; $i < $ittrt; $i++) :
         ?>
             <!-- semester an exam name  -->
 
@@ -111,7 +112,6 @@ session_start();
 
                     // $course_id-->array of all enrolled courses
                     $course_id = array_column($childres, 'course_id');
-
 
                     // $course_name-->array of all enrolled course name
                     $course_name = array_column($registrd_crs, 'course_name');

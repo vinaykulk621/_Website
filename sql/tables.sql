@@ -118,7 +118,7 @@ CREATE TABLE `website`.`aplication`
     `usn` VARCHAR(10) NOT NULL ,
     `exam_name` VARCHAR(10) NOT NULL ,
     `course_id` VARCHAR(15) NOT NULL ,
-    PRIMARY KEY (`usn`(10)),
+    PRIMARY KEY (`usn`(10),`course_id`(15),`exam_name`(10)),
     FOREIGN key(`usn`) REFERENCES `student`(`usn`) 
     ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (`course_id`) REFERENCES `enrolled`(`course_id`) 
@@ -157,7 +157,8 @@ INSERT INTO `department`(`department_name`, `hod`) VALUES
 INSERT INTO `student`(`usn`, `student_email`, `student_first_name`, `student_middle_name`, `student_last_name`, `department_name`, `password`, `dob`, `sem`)VALUES
 ('1BM20CS001','vinay.cs20@bmsce.ac.in','Vinay','','Kulkarni','CSE','12345','2000-12-24',3),
 ('1BM20CS002','vignesh.cs20@bmsce.ac.in','vignesh','','V','CSE','12345','2003-10-20',3),
-('1BM20CS003','vinayak.cs20@bmsce.ac.in','Vinayak','Y','Bajantri','CSE','12345','2002-12-24',3);
+('1BM20CS003','vinayak.cs20@bmsce.ac.in','Vinayak','Y','Bajantri','CSE','12345','2002-12-24',3),
+('1BM20CS004','anish.cs20@bmsce.ac.in','Anish','Y','Khatriya','CSE','12345','2001-08-24',3);
 
 
 
@@ -278,6 +279,15 @@ INSERT INTO `enrolled`(`usn`, `course_id`, `fid`, `sem`) VALUES
 ('1BM20CS003','19CS3PCLOD','CSE008',3),
 
 
+('1BM20CS004','19MA3BSSDM','CSE021',3),
+('1BM20CS004','19CS3ESMMC','CSE015',3),
+('1BM20CS004','19CS3PCOOJ','CSE019',3),
+('1BM20CS004','19CS3PWPW1','CSE003',3),
+('1BM20CS004','19CS3PCDST','CSE018',3),
+('1BM20CS004','19CS3PCCOA','CSE013',3),
+('1BM20CS004','19CS3PCLOD','CSE008',3),
+
+
 
 -- 4th sem
 ('1BM20CS001','19MA4BSLIA','CSE001',4),
@@ -288,6 +298,8 @@ INSERT INTO `enrolled`(`usn`, `course_id`, `fid`, `sem`) VALUES
 ('1BM20CS001','19CS4SRSTI','CSE006',4),
 ('1BM20CS001','19CS4PWPW2','CSE007',4),
 ('1BM20CS001','19CS4NCNC4','CSE008',4),
+
+
 
 ('1BM20CS002','19MA4BSLIA','CSE001',4),
 ('1BM20CS002','19CS4PCTFC','CSE002',4),
@@ -305,9 +317,17 @@ INSERT INTO `enrolled`(`usn`, `course_id`, `fid`, `sem`) VALUES
 ('1BM20CS003','19CS4PCOPS','CSE005',4),
 ('1BM20CS003','19CS4SRSTI','CSE006',4),
 ('1BM20CS003','19CS4PWPW2','CSE007',4),
-('1BM20CS003','19CS4NCNC4','CSE008',4);
+('1BM20CS003','19CS4NCNC4','CSE008',4),
 
 
+('1BM20CS004','19MA4BSLIA','CSE001',4),
+('1BM20CS004','19CS4PCTFC','CSE002',4),
+('1BM20CS004','19CS4PCDBM','CSE003',4),
+('1BM20CS004','19CS4PCADA','CSE004',4),
+('1BM20CS004','19CS4PCOPS','CSE005',4),
+('1BM20CS004','19CS4SRSTI','CSE006',4),
+('1BM20CS004','19CS4PWPW2','CSE007',4),
+('1BM20CS004','19CS4NCNC4','CSE008',4);
 
 -- result
 -- exam_name
@@ -343,6 +363,13 @@ VALUES
 ('1BM20CS003','regular','19CS3PCCOA',45,32,3),
 ('1BM20CS003','regular','19CS3PCLOD',45,32,3),
 
+('1BM20CS004','regular','19MA3BSSDM',25,12,3),
+('1BM20CS004','regular','19CS3ESMMC',12,22,3),
+('1BM20CS004','regular','19CS3PCOOJ',32,12,3),
+('1BM20CS004','regular','19CS3PWPW1',36,12,3),
+('1BM20CS004','regular','19CS3PCDST',20,20,3),
+('1BM20CS004','regular','19CS3PCCOA',26,05,3),
+('1BM20CS004','regular','19CS3PCLOD',32,12,3),
 
 -- 4th sem
 ('1BM20CS001','regular','19MA4BSLIA',45,32,4),
@@ -371,7 +398,16 @@ VALUES
 ('1BM20CS003','regular','19CS4PCOPS',45,32,4),
 ('1BM20CS003','regular','19CS4SRSTI',45,32,4),
 ('1BM20CS003','regular','19CS4PWPW2',45,32,4),
-('1BM20CS003','regular','19CS4NCNC4',45,32,4);
+('1BM20CS003','regular','19CS4NCNC4',45,32,4),
+
+('1BM20CS004','regular','19MA4BSLIA',15,12,4),
+('1BM20CS004','regular','19CS4PCTFC',45,32,4),
+('1BM20CS004','regular','19CS4PCDBM',15,32,4),
+('1BM20CS004','regular','19CS4PCADA',45,12,4),
+('1BM20CS004','regular','19CS4PCOPS',15,32,4),
+('1BM20CS004','regular','19CS4SRSTI',45,32,4),
+('1BM20CS004','regular','19CS4PWPW2',15,12,4),
+('1BM20CS004','regular','19CS4NCNC4',45,32,4);
 
 
 -- -- aplication

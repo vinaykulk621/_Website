@@ -1,14 +1,11 @@
 <?php
 //database connection
-// session_start();
 
-ob_start();    
+ob_start();
 
 try {
-    $con = new PDO("mysql:dbname=website;host=localhost","root","");
-    $con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
+    $con = new PDO("mysql:dbname=website;host=localhost", "root", "");
+    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 } catch (PDOException $th) {
-    exit("failed connection with database:".$th->getMessage());
+    exit("failed connection with database:" . $th->getMessage());
 }
-
-?>

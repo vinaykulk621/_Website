@@ -85,7 +85,7 @@ if (!User::isloggedin()) {
 
 
         <!-- Application form -->
-        <a href="./form1.php" class="links_in_pallets">
+        <a href="./applicationform.php" class="links_in_pallets">
             <div id="appl_form" name="appl_form">
                 <h1>EXAM APPLICATION</h1>
                 <img src="./images/application.png" alt="APPLICATION_FORM" class="application_logo">
