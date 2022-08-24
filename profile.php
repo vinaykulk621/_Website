@@ -3,7 +3,6 @@ session_start();
 
 require_once("configuration/config.php");
 require_once("configuration/auth.php");
-require_once("driver_code/php/retrieval.php");
 
 // checks if the user is logged in by checking the session variable 'is_logged_in' and heads to the login page if not logged in
 if (!User::isloggedin()) {
@@ -29,7 +28,7 @@ $_SESSION['has_applied_for_fastrack'] = User::query_if_application_submitted_for
 <body>
 
     <!--header container-->
-    <?php require('driver_code/html/header.php'); ?>
+    <?php require('driver_code/header.php'); ?>
 
 
     <div class="pallets">

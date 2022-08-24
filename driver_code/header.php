@@ -238,7 +238,7 @@ require_once("./configuration/auth.php");
 
                 <!--dropdown content-->
                 <div class="dropdown-content">
-                    <span class="poo"><a href="form_fast.html">FAST TRACK</a></span>
+                    <span class="poo"><a href="./applicationform.php">FAST TRACK</a></span>
                     <!--dropdown content end-->
                 </div>
 

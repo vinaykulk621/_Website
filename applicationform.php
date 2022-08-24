@@ -2,7 +2,10 @@
 session_start();
 // require('configuration/auth.php');
 
-if ($_SESSION['has_applied_for_fastrack']) {
+if (!$_SESSION['is_logged_in']) {
+  header('Location: login.php');
+}
+if ($_SESSION['has_applied_for_fastrack'] && $_SESSION['is_logged_in']) {
   header('Location: applied_form.php');
 }
 ?>
@@ -25,7 +28,7 @@ if ($_SESSION['has_applied_for_fastrack']) {
 
   <!--header container-->
   <?php
-  require_once("driver_code/html/header.php");
+  require_once("driver_code/header.php");
   ?>
 
   <div class="background">

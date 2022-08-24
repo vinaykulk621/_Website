@@ -18,7 +18,7 @@ session_start();
 
     <!--header container-->
     <?php
-    require_once("driver_code/html/header.php");
+    require_once("driver_code/header.php");
     ?>
 
     <body>
@@ -36,7 +36,7 @@ session_start();
 
         // loop to create all the tables of the result sheet
         // the loop itterates over how many semester the student has completed
-        $ittrt= count($outputsem);
+        $ittrt = count($outputsem);
         for ($i = 0; $i < $ittrt; $i++) :
         ?>
             <!-- semester an exam name  -->

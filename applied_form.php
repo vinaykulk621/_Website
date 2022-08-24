@@ -19,7 +19,7 @@ session_start();
 <body>
     <!--header container-->
     <?php
-    require_once("driver_code/html/header.php");
+    require_once("driver_code/header.php");
     ?>
 
     <!-- table of all the courses failed or eligible to apply for the exam -->
@@ -40,7 +40,7 @@ session_start();
     // if the result is null then the student hasn't failed any subject
     $data_needed = User::query_all_failed_sub_irrespective_of_sem($con, $_SESSION["usn"]);
     if ($data_needed == NULL) { ?>
-        <h1>HI <?php echo $res['student_first_name']; ?> DO NOT HAVE ANY BACKLOGS</h1>
+        <h1>HI <?php echo strtoupper($res->student_first_name); ?> DO NOT HAVE ANY BACKLOGS</h1>
     <?php
     } else {
         echo '<h1 class="_aplication_heading">FASTRACK EXAM APPLICTION SUCCESS</h1>';
