@@ -6,6 +6,7 @@ require_once("./configuration/auth.php");
 <div class="header">
     <!-- stylin' of the header -->
     <style>
+        /* profile photo */
         #profile_photo {
             height: 60px;
             width: 60px;
@@ -13,7 +14,7 @@ require_once("./configuration/auth.php");
             padding: 5px 20px;
         }
 
-        /*profile photo section end*/
+        /* navigation bar */
         .navbar {
             border-top: 0px solid black;
             border-bottom: 1px black solid;
@@ -27,6 +28,7 @@ require_once("./configuration/auth.php");
             flex-direction: row;
         }
 
+        /* left_ones */
         .left_ones {
             display: flex;
             align-items: center;
@@ -37,6 +39,7 @@ require_once("./configuration/auth.php");
             flex-direction: row;
         }
 
+        /* navigation bar links */
         .navbar a {
             float: left;
             font-family: "IBM Plex Sans", sans-serif;
@@ -47,11 +50,13 @@ require_once("./configuration/auth.php");
             text-decoration: none;
         }
 
+        /* header sectoin */
         .header {
             background-color: #bdd4e7;
             background-image: linear-gradient(315deg, #bdd4e7 0%, #97aedd 74%);
         }
 
+        /* first_row */
         .first_row {
             display: flex;
             justify-content: space-between;
@@ -60,12 +65,14 @@ require_once("./configuration/auth.php");
             align-items: center;
         }
 
+        /* dropdown */
         .dropdown {
             float: left;
             font-family: "IBM Plex Sans", sans-serif;
             overflow: hidden;
         }
 
+        /* dropdown carret*/
         .dropdown .dropbtn {
             font-size: 22px;
             border: none;
@@ -78,6 +85,7 @@ require_once("./configuration/auth.php");
             margin: 0;
         }
 
+        /* dropdown shit*/
         .dropdown-content a {
             float: none;
             color: white;
@@ -89,6 +97,7 @@ require_once("./configuration/auth.php");
             font-size: 18px;
         }
 
+        /* some navigation shit */
         .navbar a:hover,
         .dropdown:hover .dropbtn {
             background-color: black;
@@ -98,6 +107,7 @@ require_once("./configuration/auth.php");
             color: red;
         }
 
+        /* dropdown content bs */
         .dropdown-content {
             display: none;
             position: absolute;
@@ -107,6 +117,7 @@ require_once("./configuration/auth.php");
             z-index: 1;
         }
 
+        /* dropdown content bs */
         .dropdown-content a:hover {
             background-color: black;
             font-size: 18px;
@@ -114,10 +125,12 @@ require_once("./configuration/auth.php");
             font-family: "IBM Plex Sans", sans-serif;
         }
 
+        /* dropdown content bs */
         .dropdown:hover .dropdown-content {
             display: block;
         }
 
+        /* home */
         .ho::after {
             content: "";
             background-color: rgb(28, 183, 240);
@@ -130,11 +143,11 @@ require_once("./configuration/auth.php");
             transform: translateX(-50%);
             transition: all 0.5s;
         }
-
         .ho:hover::after {
             width: 60px;
         }
 
+        /* exams */
         .ji::after {
             content: "";
             background-color: rgb(28, 183, 240);
@@ -152,6 +165,7 @@ require_once("./configuration/auth.php");
             width: 60px;
         }
 
+        /* campus */
         .ni::after {
             content: "";
             background-color: rgb(28, 183, 240);
@@ -169,6 +183,7 @@ require_once("./configuration/auth.php");
             width: 80px;
         }
 
+        /* results */
         .oop::after {
             content: "";
             background-color: rgb(28, 183, 240);
@@ -185,23 +200,7 @@ require_once("./configuration/auth.php");
         .oop:hover::after {
             width: 75px;
         }
-
-        .poo::after {
-            content: "";
-            background-color: rgb(28, 183, 240);
-            width: 0px;
-            height: 4px;
-            border-radius: 4px;
-            position: absolute;
-            top: 127px;
-            left: 70px;
-            transform: translateX(-50%);
-            transition: all 0.5s;
-        }
-
-        .poo:hover::after {
-            width: 105px;
-        }
+        
     </style>
 
     <div class="first_row">
