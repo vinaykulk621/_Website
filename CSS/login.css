@@ -14,7 +14,7 @@ body {
   border: 0px solid rgb(0, 0, 0);
   padding: 25px;
   width: 230px;
-  height: 410px;
+  height: 430px;
   background: linear-gradient(to bottom left, #97a5f7 0%, #58bceb 100%);
   box-shadow: 0px 3px 5px 0px grey;
   border-radius: 5px;
@@ -44,7 +44,7 @@ body {
 #email,
 #usn,
 #password {
-  border: 0px ;
+  border: 0px;
   padding: 10px;
   width: 215px;
   border-radius: 4px;
@@ -96,3 +96,25 @@ p {
   margin-bottom: 20px;
 }
 /*________________login to website text deco start*/
+
+/* text decoration for changing password and facculty login */
+.last_part {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+._facculty_login,
+.changing_password {
+  font-size: medium;
+  text-decoration: none;
+  color: #000000;
+}
+.old_password {
+  margin: 5px;
+  font-style: normal;
+  font-size: 28px;
+  font-variant: small-caps;
+  font-weight: normal;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-bottom: 20px;
+}

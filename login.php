@@ -44,10 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <!--____________________login box start-->
   <div class="login_box">
 
-
     <!--login form-->
-
-    <!-- onsubmit="return validateForm()" -->
     <!-- no need of action attribute since we are processing the form in this page -->
     <form name="login" method="post">
 
@@ -75,6 +72,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <!--password input-->
       <input id="password" type="password" name="password" placeholder="Enter Password">
 
+
+      <!-- facculty_login and change password place -->
+      <div class="last_part">
+
+        <!-- change password -->
+        <a href="./change_password.php" class="changing_password">Change Password</a>
+
+        <!-- facculty login option -->
+        <a href="./facculty_login.php" class="_facculty_login">Facculty Login</a>
+
+      </div>
 
       <!--submit button-->
       <input class="button" type="submit" value="Submit">

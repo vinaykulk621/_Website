@@ -4,7 +4,7 @@ require("configuration/config.php");
 class User
 {
 
-    // function for checking the credential of the uer
+    // function for checking the credential of the student
     public static function login($con,  $usn, $email, $password)
     {
         // sql statement for retrieving data of the student
@@ -28,7 +28,42 @@ class User
         if ($user = $query->fetch()) {
 
             // check the returned value from the database with the entered value
-            if ($user->usn == $usn && $user->student_email == $email && $user->password == $password) {
+            if ($user->usn == $usn && $user->student_email == $email && password_verify($password, $user->password)) {
+                // if the user is authenticated then return true
+                return true;
+            }
+        }
+
+        // return false if any of the condition above fails to satisfy
+        return false;
+    }
+
+
+    // function for checking the credential of the facculty
+    public static function facculty_login($con,  $fid, $email, $password)
+    {
+        // sql statement for retrieving data of the student
+        $sql = "SELECT * 
+        FROM facculty 
+        WHERE fid=:fid";
+
+        // prepare the sql statement
+        $query = $con->prepare($sql);
+
+        // binds the value of usn 
+        $query->bindValue(':fid', $fid, PDO::PARAM_STR);
+
+        // it tells php to return the data as an object of class user
+        $query->setFetchMode(PDO::FETCH_CLASS, 'User');
+
+        // this statement return a boolean value
+        $query->execute();
+
+        // if the returned value is true i.e; there exist a row which has usn same as the usn entered by the user  
+        if ($user = $query->fetch()) {
+
+            // check the returned value from the database with the entered value
+            if ($user->fid == $fid && $user->facculty_email == $email && password_verify($password, $user->password)) {
                 // if the user is authenticated then return true
                 return true;
             }
@@ -51,6 +86,39 @@ class User
         }
         if ($usr = $query->fetch()) {
             return $usr;
+        }
+    }
+
+
+    // function to check if the password is same in the the database
+    public static function check_password($con, $usn, $old_pass)
+    {
+        if ($con) {
+            $pass_db = password_hash($old_pass, PASSWORD_DEFAULT);
+            $sql = "SELECT * FROM `student` 
+            WHERE `password` = '$pass_db'
+            AND usn=:usn";
+            $query = $con->prepare($sql);
+            $query->bindValue(':usn', $usn, PDO::PARAM_STR);
+            $query->setFetchMode(PDO::FETCH_CLASS, 'User');
+        }
+        if ($query->execute()) {
+            return true;
+        }
+        return false;
+    }
+
+
+    // function to change the the password
+    public static function change_password($con, $usn, $new_pass)
+    {
+        if ($con) {
+            $new_hash_pass = password_hash($new_pass, PASSWORD_DEFAULT);
+            $sql = "UPDATE `student`
+            SET `password` = '$new_hash_pass'
+            WHERE `usn`='$usn'";
+            $query = $con->prepare($sql);
+            $query->execute();
         }
     }
 

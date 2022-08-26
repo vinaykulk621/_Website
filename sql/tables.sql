@@ -20,7 +20,7 @@ CREATE TABLE `website`.`student`
     `student_middle_name` VARCHAR(40) DEFAULT NULL , 
     `student_last_name` VARCHAR(40) NOT NULL , 
     `department_name` VARCHAR(4) NOT NULL , 
-    `password` VARCHAR(25) NOT NULL ,
+    `password` CHAR(60) NOT NULL ,
     `dob` DATE NOT NULL,
     `age` int(2) AS (TIMESTAMPDIFF(YEAR, dob, CURDATE())),
     `sem` int(1) NOT NULL,
@@ -53,6 +53,7 @@ CREATE TABLE `website`.`facculty`
     `facculty_email` VARCHAR(40) NOT NULL , 
     `facculty_name` VARCHAR(40) NOT NULL , 
     `department_name` VARCHAR(4) NOT NULL ,
+    `password` CHAR(60) NOT NULL ,
     FOREIGN key(`department_name`) REFERENCES `department`(`department_name`)
     ON DELETE CASCADE ON UPDATE CASCADE
 ) 
@@ -155,10 +156,10 @@ INSERT INTO `department`(`department_name`, `hod`) VALUES
 
 -- inserting into student table
 INSERT INTO `student`(`usn`, `student_email`, `student_first_name`, `student_middle_name`, `student_last_name`, `department_name`, `password`, `dob`, `sem`)VALUES
-('1BM20CS001','vinay.cs20@bmsce.ac.in','Vinay','','Kulkarni','CSE','12345','2000-12-24',3),
-('1BM20CS002','vignesh.cs20@bmsce.ac.in','vignesh','','V','CSE','12345','2003-10-20',3),
-('1BM20CS003','vinayak.cs20@bmsce.ac.in','Vinayak','Y','Bajantri','CSE','12345','2002-12-24',3),
-('1BM20CS004','anish.cs20@bmsce.ac.in','Anish','Y','Khatriya','CSE','12345','2001-08-24',3);
+('1BM20CS001','vinay.cs20@bmsce.ac.in','Vinay','','Kulkarni','CSE','$2y$10$c.zlbTRXJ.8l2os2n.T3Qub26GNJnVfoqANcsRBWI5y2OaQurxfVS','2000-12-24',3),
+('1BM20CS002','vignesh.cs20@bmsce.ac.in','vignesh','','V','CSE','$2y$10$c.zlbTRXJ.8l2os2n.T3Qub26GNJnVfoqANcsRBWI5y2OaQurxfVS','2003-10-20',3),
+('1BM20CS003','vinayak.cs20@bmsce.ac.in','Vinayak','Y','Bajantri','CSE','$2y$10$c.zlbTRXJ.8l2os2n.T3Qub26GNJnVfoqANcsRBWI5y2OaQurxfVS','2002-12-24',3),
+('1BM20CS004','anish.cs20@bmsce.ac.in','Anish','Y','Khatriya','CSE','$2y$10$c.zlbTRXJ.8l2os2n.T3Qub26GNJnVfoqANcsRBWI5y2OaQurxfVS','2001-08-24',3);
 
 
 
@@ -189,29 +190,29 @@ INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `s
 
 
 -- facculty
-INSERT INTO `facculty`(`fid`, `facculty_email`, `facculty_name`,`department_name`) VALUES 
-('CSE001','bgprasad.cse@bmsce.ac.in','Dr. B G PRASAD','CSE'),
-('CSE002','varaprasad.cse@bmsce.ac.in ','Dr. G.VARAPRASAD','CSE'),
-('CSE003','indira.cse@bmsce.ac.in ','Dr. INDIRAMMA M','CSE'),
-('CSE004','jyothinayak.cse@bmsce.ac.in ','Dr. JYOTHI S. NAYAK','CSE'),
-('CSE005','nagarathna.cse@bmsce.ac.in ','Dr. NAGARATHNA N','CSE'),
-('CSE006','prasad.cse@bmsce.ac.in ','Dr. PRASAD G R','CSE'),
-('CSE007','jakkali.cse@bmsce.ac.in ','BASAVARAJ JAKKALI','CSE'),
-('CSE008','kavithas.cse@bmsce.ac.in ','Dr. KAVITHA SOODA','CSE'),
-('CSE009','kayarvizhyn.cse@bmsce.ac.in ','Dr. KAYARVIZHY N','CSE'),
-('CSE010','umadevi.cse@bmsce.ac.in ','Dr. UMADEVI V','CSE'),
-('CSE011','madhavi.cse@bmsce.ac.in ','MADHAVI R.P.','CSE'),
-('CSE012','antararc.cse@bmsce.ac.in ','ANTARA ROY CHOUDHURY','CSE'),
-('CSE013','asha.cse@bmsce.ac.in ','Dr. ASHA G R','CSE'),
-('CSE014','panimozhi.cse@bmsce.ac.in ','Dr. K. PANIMOZHI','CSE'),
-('CSE015','blatha.cse@bmsce.ac.in ','Dr. LATHA N.R.','CSE'),
-('CSE016','bmanjunathdr.cse@bmsce.ac.in ','Dr. Manjunath D R','CSE'),
-('CSE017','nandhiniv.cse@bmsce.ac.in ','Dr. NANDHINI VINEETH','CSE'),
-('CSE018','nselva.cse@bmsce.ac.in ','Dr. SELVA KUMAR S','CSE'),
-('CSE019','namratham.cse@bmsce.ac.in ','NAMRATHA M','CSE'),
-('CSE020','rekhags.cse@bmsce.ac.in ','REKHA G S','CSE'),
-('CSE021','nsonikasharma.cse@bmsce.ac.in ','Sonika Shar,a D','CSE'),
-('CSE022','vikranth.cse@bmsce.ac.in ','VIKRANTH B.M','CSE');
+INSERT INTO `facculty`(`fid`, `facculty_email`, `facculty_name`,`department_name`,`password`) VALUES 
+('CSE001','bgprasad.cse@bmsce.ac.in','Dr. B G PRASAD','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE002','varaprasad.cse@bmsce.ac.in ','Dr. G.VARAPRASAD','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE003','indira.cse@bmsce.ac.in ','Dr. INDIRAMMA M','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE004','jyothinayak.cse@bmsce.ac.in ','Dr. JYOTHI S. NAYAK','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE005','nagarathna.cse@bmsce.ac.in ','Dr. NAGARATHNA N','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE006','prasad.cse@bmsce.ac.in ','Dr. PRASAD G R','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE007','jakkali.cse@bmsce.ac.in ','BASAVARAJ JAKKALI','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE008','kavithas.cse@bmsce.ac.in ','Dr. KAVITHA SOODA','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE009','kayarvizhyn.cse@bmsce.ac.in ','Dr. KAYARVIZHY N','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE010','umadevi.cse@bmsce.ac.in ','Dr. UMADEVI V','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE011','madhavi.cse@bmsce.ac.in ','MADHAVI R.P.','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE012','antararc.cse@bmsce.ac.in ','ANTARA ROY CHOUDHURY','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE013','asha.cse@bmsce.ac.in ','Dr. ASHA G R','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE014','panimozhi.cse@bmsce.ac.in ','Dr. K. PANIMOZHI','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE015','blatha.cse@bmsce.ac.in ','Dr. LATHA N.R.','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE016','bmanjunathdr.cse@bmsce.ac.in ','Dr. Manjunath D R','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE017','nandhiniv.cse@bmsce.ac.in ','Dr. NANDHINI VINEETH','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE018','nselva.cse@bmsce.ac.in ','Dr. SELVA KUMAR S','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE019','namratham.cse@bmsce.ac.in ','NAMRATHA M','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE020','rekhags.cse@bmsce.ac.in ','REKHA G S','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE021','nsonikasharma.cse@bmsce.ac.in ','Sonika Shar,a D','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('CSE022','vikranth.cse@bmsce.ac.in ','VIKRANTH B.M','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C');
 
 
 

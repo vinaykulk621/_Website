@@ -4,27 +4,24 @@ session_start();       //needed here and in index.php file
 require("configuration/auth.php");
 require("configuration/config.php");
 
-$str=12345;
-echo password_hash($str,PASSWORD_DEFAULT);
-
 // checks if the login button has pressed
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //checks if the credentials put by user is legitmate or not
-    if (User::facculty_login($con, $_POST['facculty_id'], $_POST['email'], $_POST['password'])) {
+    if (User::check_password($con, $_POST['usn'], $_POST['old_password'])) {
 
-        // if the user inout is legitmate the session variable 'is_logged_in' to true
-        $_SESSION['is_logged_in'] = true;
+        // change the password
+        User::change_password($con, $_POST['usn'], $_POST['new_password']);
 
-        // for access of all the information across all the pages we initialize the session variable with the usn of the user
-        $_SESSION['fid'] = $_POST['fid'];
+        // tell the user that his password has been successfully changed
+        echo '<script>alert(' . 'YOUR PASSWORD HAS BEEN CHANGED SUCCESSFULLY' . ');</script>';
 
         // head to the profile page
-        header("Location: facculty_profile.php");
+        header("Location: profile.php");
     } else {
 
         // alert if the credentials are wrong
-        echo '<script> alert("wrong credentials") </script>';
+        echo '<script> alert("COULD NOT CHANGE PASSWORD")</script>';
     }
 }
 
@@ -61,36 +58,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p>BMSCE</p>
             </div>
 
-            <!--Facculty ID label-->
-            <label for="facculty_id" class="usn">FACCULTY ID</label>
+            <!--USN label-->
+            <label for="usn" class="usn">USN</label>
             <!--USN input-->
-            <input id="usn" type="text" placeholder="CSXXX" name="facculty_id" pattern="[A-Z]{2}[0-9]{3}" autofocus>
+            <input id="usn" type="text" placeholder="1BM00XX001" name="usn" pattern="[0-9]{1}[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{3}" autofocus>
 
 
-            <!--Email lable-->
-            <label for="email" class="email">email-id</label>
-            <!--Email input-->
-            <input id="email" type="email" name="email" placeholder="Example@bmsce.ac.in" size="20px" autofocus>
+            <!--Old Password label-->
+            <label for="old_password" class="old_password">OLD PASSWORD</label>
+            <!--Old Password input-->
+            <input id="usn" type="password" placeholder="old password" name="old_password" autofocus>
 
 
-            <!--password label-->
-            <label for="password" class="password">password</label>
-            <!--password input-->
-            <input id="password" type="password" name="password" placeholder="Enter Password" autofocus>
+            <!--new password lable-->
+            <label for="new_password" class="old_password">NEW PASSWORD</label>
+            <!--new password input-->
+            <input id="email" type="password" placeholder="new password" name="new_password" size="20px" autofocus>
 
 
-
-            <!-- facculty_login and change password place -->
+            <!-- back to login link -->
             <div class="last_part">
-
-                <!-- facculty login option -->
-                <a href="./login.php" class="_facculty_login">Students Login</a>
-
+                <a href="./login.php" class="_facculty_login">Student Login</a>
+                <a href="./facculty_login.php" class="_facculty_login">Facculty Login</a>
             </div>
 
 
             <!--submit button-->
             <input class="button" type="submit" value="Submit">
+
 
         </form>
 
