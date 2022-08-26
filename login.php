@@ -46,8 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     <!--login form-->
-
-    <!-- onsubmit="return validateForm()" -->
     <!-- no need of action attribute since we are processing the form in this page -->
     <form name="login" method="post">
 
