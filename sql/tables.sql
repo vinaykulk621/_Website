@@ -165,6 +165,7 @@ INSERT INTO `student`(`usn`, `student_email`, `student_first_name`, `student_mid
 
 -- inserting into course table
 INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `sem`) VALUES
+
 -- 3rd sem
 ('19MA3BSSDM','Statistics and Discrete Mathematics','CSE',4,3),
 ('19CS3ESMMC','Microprocessors and Microcontrollers','CSE',4,3),
@@ -184,7 +185,54 @@ INSERT INTO `course`(`course_id`, `course_name`, `department_name`, `credit`, `s
 ('19CS4PCOPS','Operating Systems','CSE',4,4),
 ('19CS4SRSTI','Seminar Technical / Internship','CSE',1,4),
 ('19CS4PWPW2','Project Work-2','CSE',2,4),
-('19CS4NCNC4','Cultural Activity (Music/Dance etc.)','CSE',0,4);
+('19CS4NCNC4','Cultural Activity (Music/Dance etc.)','CSE',0,4),
+
+-- 5th sem
+('20CS5PCAIP','Artificial intelligence','CSE',4,5),
+('20CS5PCSEG','Software Engineering','CSE',4,5),
+('20CS5HSSPM',' Software Project Management and Finance','CSE',4,5),
+('20CS5PEIOT','Internet of Things','CSE',3,5),
+('20CS5PEAJJ','Advanced Java and J2EE','CSE',2,5),
+('20CS5PEAAG','Advanced Algorithms','CSE',3,5),
+('20CS5PESCD','System Software and Compiler Design','CSE',3,5),('20CS5PEACA','Advanced Computer Architecture','CSE',2,5),
+('20CS5PWPW3','Project Work-3','CSE',4,5),
+('20CS5NCNC5','Making Videos with Social message','CSE',0,5);
+
+-- 6th sem
+('20CS6PCMAL','Machine Learning','CSE',4,6),
+('220CS6PCCNS',' Cryptography and Network Security','CSE',4,6),
+('20CS6PCOMD','Object Oriented Modelling and Design','CSE',4,6),('20CS6HSMGE','Management and Entrepreneurship','CSE',3,6),
+('20CS6PECGV','Computer Graphics & Visualization','CSE',4,6),
+('20CS6PEBDA','Big Data Analyticsv','CSE',4,6),
+('20CS6PENLP','Natural Language Processing','CSE',4,6),
+('20CS6OEJVP','Open Elective-1 : Java Programming','CSE',3,6),
+('20CS6OERPA','Open Elective-2 : Robot Process Automation Design and Development','CSE',3,6),
+(' 20CS6PWPW4','Project Work-4','CSE',1,6),
+('20CS6SRSTI Seminar on Internship / MOOC course','CSE',4,6),
+('21CS7BSBFE','Biology for Engineers','CSE',4,6),
+('21CS7HSCLI Cyber Law ',' Forensics and IPR','CSE',4,6),
+
+-- 7th sem
+('21CS7PEBLC','Blockchain','CSE',4,7),
+('21CS7PENSD',' NoSQLDatabase','CSE',4,7),
+('21CS7PEDIS',' Distributed Systems','CSE',4,7),
+('21CS7PESDP',' Software Architecture and Design Patterns','CSE',4,7),
+('21CS7PECCT',' Cloud Computing','CSE',4,7),
+('21CS7OEDAS',' Open Elective-1 : Data Science','CSE',4,7),
+('21CS7OEPYP',' Open Elective-2 : Python Programming','CSE',4,7),
+('21CS7PCIMC',' Industry Motivated Course ','CSE',4,7),
+('21CS7PWPP1',' Major Project Phase-1','CSE',4,7),
+('21CS7SRSEM',' Technical Seminar (Based on review of Research Publication/ Patent)','CSE',4,7),
+('21CS7NCNC7',' MOOC Course / Virtual lab','CSE',4,7),
+
+-- 8th sem
+('21CS8PCGCT',' Green Computing','CSE',4,8),
+('21CS8OECCT ','Open Elective-1: Cloud Computing','CSE',4,8),
+('21CS8PWPP2 ','Major Project Phase-2','CSE',4,8),
+('21CS8SRINT',' Seminar Based on Summer/Winter Internship with a government
+organization or any other organization or a premier Institute or a Research Lab ','CSE',4,8),
+('21CS8NCNC8',' Competitive Exam / MOOC Course','CSE',4,8);
+
 
 
 
