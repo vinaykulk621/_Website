@@ -44,44 +44,28 @@ if (!User::isloggedin()) {
                 // 2-->the usn of the student wich is stoed in the session variable 'usn'
                 // the contents of the array is accessed by the column name
 
-
-
-
-
-
-                // change it to query all teacher details
-                $res = User::query_all($con, $_SESSION['fid']);
-
-
-
-
-
+                $res = User::query_all_facculty($con, $_SESSION['fid']);
 
 
 
                 // change ot to show teacher deatils
                 echo
                 '<p class="name_">' .
-                    strtoupper($res->student_first_name) . ' ' .
-                    strtoupper($res->student_middle_name) . ' ' .
-                    strtoupper($res->student_last_name) .
+                    strtoupper($res->facculty_name) . ' ' .
                     '</p>' .
 
                     '<p class="usn_">' .
-                    $res->usn .
+                    $res->fid .
                     '</p>' .
 
                     '<p class="email_">' .
-                    $res->student_email .
+                    $res->facculty_email .
                     '</p>' .
 
                     '<p class="branch_">' .
                     strtoupper(User::get_dept_name($res->department_name)) .
-                    '</p>' .
-
-                    '<p class="sem_"> SEMESTER: ' .
-                    $res->sem .
                     '</p>';
+
                 ?>
 
             </div>
@@ -98,7 +82,7 @@ if (!User::isloggedin()) {
         <!-- results pallete-->
         <a href="./result.php" class="links_in_pallets">
             <div id="result" name="result">
-                <h1 class="result_heading">YOUR RESULTS</h1>
+                <h1 class="result_heading">YOUR CLASSES</h1>
                 <img src="./images/results.png" alt="RESULTS" class="results_logo">
             </div>
         </a>
@@ -120,7 +104,7 @@ if (!User::isloggedin()) {
 
 
 
-        
+
     </div>
 
 </body>

@@ -4,9 +4,6 @@ session_start();       //needed here and in index.php file
 require("configuration/auth.php");
 require("configuration/config.php");
 
-$str=12345;
-echo password_hash($str,PASSWORD_DEFAULT);
-
 // checks if the login button has pressed
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -64,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!--Facculty ID label-->
             <label for="facculty_id" class="usn">FACCULTY ID</label>
             <!--USN input-->
-            <input id="usn" type="text" placeholder="CSXXX" name="facculty_id" pattern="[A-Z]{2}[0-9]{3}" autofocus>
+            <input id="usn" type="text" placeholder="CSXXX" name="facculty_id" pattern="[A-Z]{3}[0-9]{3}" autofocus>
 
 
             <!--Email lable-->

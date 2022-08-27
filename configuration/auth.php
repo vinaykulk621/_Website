@@ -74,13 +74,29 @@ class User
     }
 
 
-    // function to retrieve all the info about
+    // function to retrieve all the info about student
     public static function query_all($con, $usn)
     {
         if ($con) {
             $sql = "SELECT * FROM `student` WHERE usn=:usn";
             $query = $con->prepare($sql);
             $query->bindValue(':usn', $usn, PDO::PARAM_STR);
+            $query->setFetchMode(PDO::FETCH_CLASS, 'User');
+            $query->execute();
+        }
+        if ($usr = $query->fetch()) {
+            return $usr;
+        }
+    }
+
+
+    // function to retrieve all the info about facculty
+    public static function query_all_facculty($con, $fid)
+    {
+        if ($con) {
+            $sql = "SELECT * FROM `facculty` WHERE fid=:fid";
+            $query = $con->prepare($sql);
+            $query->bindValue(':fid', $fid, PDO::PARAM_STR);
             $query->setFetchMode(PDO::FETCH_CLASS, 'User');
             $query->execute();
         }
