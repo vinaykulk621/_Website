@@ -28,7 +28,6 @@ if (!User::isloggedin()) {
     <!--header container-->
     <?php require('driver_code/header.php'); ?>
 
-
     <div class="pallets">
         <!-- student info pallet -->
         <div id="profile_pallet" name="profile_pallet">
@@ -38,24 +37,12 @@ if (!User::isloggedin()) {
 
                 <?php
 
-                // $res has an array of student data that gets data from query_all() method 
-                // query_all takes two input
-                // 1-->connection to database
-                // 2-->the usn of the student wich is stoed in the session variable 'usn'
-                // the contents of the array is accessed by the column name
-
                 $res = User::query_all_facculty($con, $_SESSION['fid']);
-
-
 
                 // change ot to show teacher deatils
                 echo
                 '<p class="name_">' .
                     strtoupper($res->facculty_name) . ' ' .
-                    '</p>' .
-
-                    '<p class="usn_">' .
-                    $res->fid .
                     '</p>' .
 
                     '<p class="email_">' .
@@ -64,23 +51,18 @@ if (!User::isloggedin()) {
 
                     '<p class="branch_">' .
                     strtoupper(User::get_dept_name($res->department_name)) .
+                    '</p>' .
+
+                    '<p class="usn_">' .
+                    $res->fid .
                     '</p>';
-
                 ?>
-
             </div>
-
         </div>
 
 
-
-
-
-
-        <!-- cahnge it to show all enrolled students -->
-
         <!-- results pallete-->
-        <a href="./result.php" class="links_in_pallets">
+        <a href="./facculty_class.php" class="links_in_pallets">
             <div id="result" name="result">
                 <h1 class="result_heading">YOUR CLASSES</h1>
                 <img src="./images/results.png" alt="RESULTS" class="results_logo">
@@ -88,22 +70,18 @@ if (!User::isloggedin()) {
         </a>
 
 
-
-
-
-        <!-- change it to show all the exam applied forms -->
-        <!-- Application form -->
-        <a href="./applicationform.php" class="links_in_pallets">
+        <!-- shows all the failed students subject details -->
+        <?php
+        if ($_SESSION['fid'] == 'COE001') {
+            echo '
+            <a href="./all_application_forms.php" class="links_in_pallets">
             <div id="appl_form" name="appl_form">
-                <h1>EXAM APPLICATION</h1>
+                <h1>EXAM APPLICATIONS</h1>
                 <img src="./images/application.png" alt="APPLICATION_FORM" class="application_logo">
             </div>
-        </a>
-
-
-
-
-
+            </a>
+        ';
+        } ?>
 
     </div>
 

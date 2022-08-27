@@ -143,6 +143,7 @@ require_once("./configuration/auth.php");
             transform: translateX(-50%);
             transition: all 0.5s;
         }
+
         .ho:hover::after {
             width: 60px;
         }
@@ -200,7 +201,6 @@ require_once("./configuration/auth.php");
         .oop:hover::after {
             width: 75px;
         }
-        
     </style>
 
     <div class="first_row">
@@ -210,9 +210,22 @@ require_once("./configuration/auth.php");
         </a>
 
         <!--top right profile photo-->
-        <a href="./profile.php">
+        <?php
+        if (isset($_SESSION['usn'])) {
+            echo '
+            <a href="./profile.php">
             <img src="./images/trans_profile_img-removebg-preview.png" alt="PROFILE_PHOTO" id="profile_photo">
-        </a>
+            </a>
+            ';
+        }
+        else {
+            echo '
+            <a href="./facculty_profile.php">
+            <img src="./images/trans_profile_img-removebg-preview.png" alt="PROFILE_PHOTO" id="profile_photo">
+            </a>
+            ';
+        }
+        ?>
     </div>
 
     <!--Navbar container-->

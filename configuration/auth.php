@@ -161,6 +161,27 @@ class User
     }
 
 
+    // function to retrieve all the course codes taken by the professor
+    public static function query_all_handling_courses($con, $fid)
+    {
+        if ($con) {
+            $sql = " 
+            SELECT DISTINCT e.course_id,c.course_name,c.credit,e.usn,r.cie,r.see,r.total_marks,r.sem
+            FROM enrolled e,course c,result r
+            WHERE e.fid='$fid' AND
+            r.usn=e.usn AND
+            e.course_id=c.course_id AND
+            r.course_id=e.course_id";
+            $query = $con->prepare($sql);
+            $query->setFetchMode(PDO::FETCH_ASSOC);
+            $query->execute();
+        }
+        if ($usr = $query->fetchALL()) {
+            return $usr;
+        }
+    }
+
+
     // function to retrieve the failed subject details of the student 
     public static function query_all_failed_sub($con, $usn, $sem)
     {
@@ -201,6 +222,24 @@ class User
         }
     }
 
+    // function to retrieve information about all the failed students  
+    public static function query_all_failed_students($con)
+    {
+        if ($con) {
+            $sql = " 
+            SELECT DISTINCT r.sem,r.course_id,c.course_name,c.credit,r.usn
+            FROM result r,course c
+            WHERE r.total_marks<40 AND
+            c.course_id=r.course_id
+            GROUP BY r.sem";
+            $query = $con->prepare($sql);
+            $query->setFetchMode(PDO::FETCH_ASSOC);
+            $query->execute();
+        }
+        if ($usr = $query->fetchAll()) {
+            return $usr;
+        }
+    }
 
     // function to retrieve the number of subjects student has failed in 
     public static function query_course_id_of_failed_sub($con, $usn, $sem)

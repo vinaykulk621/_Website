@@ -212,8 +212,8 @@ INSERT INTO `facculty`(`fid`, `facculty_email`, `facculty_name`,`department_name
 ('CSE019','namratham.cse@bmsce.ac.in ','NAMRATHA M','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
 ('CSE020','rekhags.cse@bmsce.ac.in ','REKHA G S','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
 ('CSE021','nsonikasharma.cse@bmsce.ac.in ','Sonika Shar,a D','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
-('CSE022','vikranth.cse@bmsce.ac.in ','VIKRANTH B.M','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C');
-
+('CSE022','vikranth.cse@bmsce.ac.in ','VIKRANTH B.M','CSE','$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C'),
+('COE001', 'coe@bmsce.ac.in', 'Dr. Rajesh', 'AIML', '$2y$10$FnSYzucdGKY0r5kSyQ2Kde33qeZoZbqh8g1sep2o2Mr/EaThsgO7C');
 
 
 

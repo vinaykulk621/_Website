@@ -237,8 +237,36 @@ table.GeneratedTable thead {
   font-size: x-large;
   margin: 10px;
 }
-.name_usn{
+.name_usn {
   align-items: center;
   justify-content: center;
   font-size: x-large;
+}
+.update_button {
+  padding: 5px 30px;
+  background-color: rgb(61, 128, 228);
+  font-size: 22px;
+  color: #dce2e9;
+}
+._update {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+._grade_,
+._cie_,
+._see_,
+._total_,
+._usn_,
+._cid_,
+._cname_,
+._credits_,
+._sem_ {
+  text-align: center;
+}
+.new_cie_,
+.new_see_ {
+  width: 35px;
+  text-align: center;
+  background-color: antiquewhite;
 }
