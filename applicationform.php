@@ -1,7 +1,12 @@
 <?php
 session_start();
-// require('configuration/auth.php');
 
+require("configuration/config.php");
+require("configuration/auth.php");
+
+if (!User::isloggedin()) {
+  header("Location: login.php");
+}
 if (!$_SESSION['is_logged_in']) {
   header('Location: login.php');
 }
@@ -56,11 +61,11 @@ if ($_SESSION['has_applied_for_fastrack'] && $_SESSION['is_logged_in']) {
 
           <label for="Student First Name" class="fname">Student Name</label>
 
-          <input type="text" name="Student_first_name" id="fname" placeholder="First Name" <?php echo 'value = "' . $res->student_first_name . '"'; ?> required>
+          <input disabled type="text" name="Student_first_name" id="fname" placeholder="First Name" <?php echo 'value = "' . $res->student_first_name . '"'; ?>>
 
-          <input type="text" id="mname" name="Student_middle_name" placeholder="Middle Name" <?php echo 'value = "' . $res->student_middle_name . '"'; ?>>
+          <input disabled type="text" name="Student_middle_name" id="mname" placeholder="Middle Name" <?php echo 'value = "' . $res->student_middle_name . '"'; ?>>
 
-          <input type="text" required id="lname" name="Student_ast_name" placeholder="Last Name" <?php echo 'value = "' . $res->student_last_name . '"'; ?>>
+          <input disabled type="text" name="Student_ast_name" id="lname" placeholder="Last Name" <?php echo 'value = "' . $res->student_last_name . '"'; ?>>
 
         </div>
 
@@ -69,12 +74,12 @@ if ($_SESSION['has_applied_for_fastrack'] && $_SESSION['is_logged_in']) {
 
           <div class="_email">
             <label for="E-mail" class="E-mail" required>E-Mail Id</label>
-            <input type="email" id="E-mail" name="E-mail" size="22" placeholder="student@gmail.com" <?php echo 'value = "' . $res->student_email . '"'; ?> required>
+            <input disabled type="email" id="E-mail" name="E-mail" size="22" placeholder="student@gmail.com" <?php echo 'value = "' . $res->student_email . '"'; ?>>
           </div>
 
           <div class="_usn">
             <label for="fname" class="usn">USN:</label>
-            <input type="text" id="usn" name="usn" placeholder="USN" pattern="[0-9]{1}[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{3}" <?php echo 'value = "' . $res->usn . '"'; ?> />
+            <input disabled type="text" id="usn" name="usn" placeholder="USN" pattern="[0-9]{1}[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{3}" <?php echo 'value = "' . $res->usn . '"'; ?> />
           </div>
 
         </div>
@@ -85,8 +90,8 @@ if ($_SESSION['has_applied_for_fastrack'] && $_SESSION['is_logged_in']) {
           <div class="_sem">
 
             <!--semester-->
-            <label for="semester" class="sem">Semester <span style="color: red;">*</span> </label>
-            <input type="number" name="semester" min="1" max="8" class="sem">
+            <label for="semester" class="sem">Semester</label>
+            <input disabled type="number" name="semester" min="1" max="8" class="sem" <?php echo 'value = "' . $res->sem . '"'; ?>>
           </div>
 
           <!-- section -->
@@ -104,24 +109,8 @@ if ($_SESSION['has_applied_for_fastrack'] && $_SESSION['is_logged_in']) {
           <div class="_department">
             <!-- department -->
             <label for="dept" class="department">Department</label>
-            <select style="height: 30px; width: 100px;" name="dept" required>
-              <option value="Department">
-                <?php
-                echo $res->department_name;
-                ?>
-              </option>
-              <option value="AEROSPACE">AE</option>
-              <option value="Mechanical">ME</option>
-              <option value="computer science">CSE</option>
-              <option value="Civil">CE</option>
-              <option value="ELECTRICAL">EEE</option>
-              <option value="INFORMATION">ISE</option>
-              <option value="Electronics">ECE</option>
-              <option value="Artificial intelligence">AI</option>
-              <option value="machine learning">ML</option>
-            </select>
+            <input disabled type="text" style="height: 30px; width: 60px; text-align:center;" name="dept" <?php echo 'value = "' . $res->department_name . '"'; ?>>
           </div>
-
         </div>
 
         <!-- fourth_part_of_form -->
@@ -134,12 +123,12 @@ if ($_SESSION['has_applied_for_fastrack'] && $_SESSION['is_logged_in']) {
               Academic year
               <span style="color: red;">*</span>
             </label>
-            <input type="number" name="academic_year" value="2019" required id="academic" min="2019" max="2022" style="height: 30px; width: 90px;">
+            <input type="number" name="academic_year" value="2019" required id="academic" min="2019" max="2022" style="height: 30px; width: 90px; text-align:center;">
           </div>
 
           <div class="_dob">
             <label for="dob" class="dob">DOB</label>
-            <input type="date" id="dob" placeholder="DD/MM/YYYY" <?php echo 'value = "' . $res->dob . '"'; ?>required>
+            <input disabled type="date" id="dob" placeholder="DD/MM/YYYY" <?php echo 'value = "' . $res->dob . '"'; ?>required>
           </div>
         </div>
 
@@ -203,19 +192,19 @@ if ($_SESSION['has_applied_for_fastrack'] && $_SESSION['is_logged_in']) {
 
               echo '<tr>';
 
-              echo '<td>';
+              echo '<td style="text-align:center;">';
               echo $course_id[$j];
               echo '</td>';
 
-              echo '<td>';
+              echo '<td style="text-align:center;">';
               echo $course_name[$j];
               echo '</td>';
 
-              echo '<td>';
+              echo '<td style="text-align:center;">';
               echo $credit[$j];
               echo '</td>';
 
-              echo '<td>';
+              echo '<td style="text-align:center;">';
               echo $sem[$j];
               echo '</td>';
 

@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require_once("configuration/config.php");
-require_once("configuration/auth.php");
+require("configuration/config.php");
+require("configuration/auth.php");
 
 // checks if the user is logged in by checking the session variable 'is_logged_in' and heads to the login page if not logged in
 if (!User::isloggedin()) {

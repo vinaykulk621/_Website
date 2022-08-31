@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+require("configuration/config.php");
+require("configuration/auth.php");
+
+if (!User::isloggedin()) {
+    header("Location: login.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -63,8 +70,7 @@ session_start();
                             <?php
                             $res = User::query_all($con, $_SESSION['usn']);
 
-                            echo
-                            strtoupper($res->student_first_name) . ' ' .
+                            echo strtoupper($res->student_first_name) . ' ' .
                                 strtoupper($res->student_middle_name) . '' .
                                 strtoupper($res->student_last_name)
                             ?>
@@ -136,37 +142,37 @@ session_start();
                         echo '<tr>';
 
 
-                        echo '<td>';
+                        echo '<td style="text-align:center;">';
                         echo $course_id[$j];
                         echo '</td>';
 
 
-                        echo '<td>';
+                        echo '<td style="text-align:center;">';
                         echo $course_name[$j];
                         echo '</td>';
 
 
-                        echo '<td>';
+                        echo '<td style="text-align:center;">';
                         echo $credit[$j];
                         echo '</td>';
 
 
-                        echo '<td>';
+                        echo '<td style="text-align:center;">';
                         echo $cie[$j];
                         echo '</td>';
 
 
-                        echo '<td>';
+                        echo '<td style="text-align:center;">';
                         echo $see[$j];
                         echo '</td>';
 
 
-                        echo '<td>';
+                        echo '<td style="text-align:center;">';
                         echo $total_marks[$j];
                         echo '</td>';
 
 
-                        echo '<td>';
+                        echo '<td style="text-align:center;">';
                         echo User::calculate_grade($total_marks[$j]);
                         echo '</td>';
 

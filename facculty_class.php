@@ -6,7 +6,7 @@ require_once("configuration/auth.php");
 
 // checks if the user is logged in by checking the session variable 'is_logged_in' and heads to the login page if not logged in
 if (!User::isloggedin()) {
-    header("Location: login.php");
+    header("Location: facculty_login.php");
 }
 ?>
 

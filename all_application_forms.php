@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+require("configuration/config.php");
+require("configuration/auth.php");
+
+if (!User::isloggedin()) {
+    header("Location: facculty_login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +37,7 @@ session_start();
     // number of failed student
     $itteration = count($res);
 
-    echo '<h1 class="_aplication_heading">FASTRACK EXAM APPLICTIONS</h1>';
+    echo '<h1 class="_aplication_heading">ALL FASTRACK EXAM APPLICTIONS</h1>';
     echo '<table class="GeneratedTable">';
     echo '<thead>';
     echo '<tr>';

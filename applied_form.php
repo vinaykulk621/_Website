@@ -1,6 +1,12 @@
 <?php
-
 session_start();
+
+require("configuration/config.php");
+require("configuration/auth.php");
+
+if (!User::isloggedin()) {
+    header("Location: login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,19 +91,19 @@ session_start();
 
                     echo '<tr>';
 
-                    echo '<td>';
+                    echo '<td style="text-align:center;">';
                     echo $course_id[$j];
                     echo '</td>';
 
-                    echo '<td>';
+                    echo '<td style="text-align:center;">';
                     echo $course_name[$j];
                     echo '</td>';
 
-                    echo '<td>';
+                    echo '<td style="text-align:center;">';
                     echo $credit[$j];
                     echo '</td>';
 
-                    echo '<td>';
+                    echo '<td style="text-align:center;">';
                     echo $sem[$j];
                     echo '</td>';
 
@@ -108,6 +114,8 @@ session_start();
     }
     echo '</tbody>';
     echo '</table>';
+    echo `
+    <p style="display:flex;justify-content:center; font-size:20px; padding-top:20px;">The following exams schedule will be sent to your email and, you shall collect your hallticket from your department's office.</p>`;
     ?>
 </body>
 

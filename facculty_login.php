@@ -4,17 +4,24 @@ session_start();       //needed here and in index.php file
 require("configuration/auth.php");
 require("configuration/config.php");
 
+if (User::isloggedin()) {
+    header('Location: facculty_profile.php');
+}
+
+
 // checks if the login button has pressed
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    // for access of all the information across all the pages we initialize the session variable with the usn of the user
-    $_SESSION['fid'] = $_POST['facculty_id'];
     
     //checks if the credentials put by user is legitmate or not
     if (User::facculty_login($con, $_POST['facculty_id'], $_POST['email'], $_POST['password'])) {
-
-        // if the user inout is legitmate the session variable 'is_logged_in' to true
+        
+        // if the user input is legitmate the session variable 'is_logged_in' set to true
         $_SESSION['is_logged_in'] = true;
+
+        
+        // for access of all the information across all the pages we initialize the session variable with the fid of the user
+        $_SESSION['fid'] = $_POST['facculty_id'];
 
 
         // head to the profile page

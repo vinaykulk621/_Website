@@ -1,14 +1,13 @@
 <?php
 session_start();
 
-require_once("configuration/config.php");
-require_once("configuration/auth.php");
+require("configuration/config.php");
+require("configuration/auth.php");
 
 // checks if the user is logged in by checking the session variable 'is_logged_in' and heads to the login page if not logged in
 if (!User::isloggedin()) {
-    header("Location: login.php");
+    header("Location: facculty_login.php");
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -62,12 +61,18 @@ if (!User::isloggedin()) {
 
 
         <!-- results pallete-->
-        <a href="./facculty_class.php" class="links_in_pallets">
-            <div id="result" name="result">
-                <h1 class="result_heading">YOUR CLASSES</h1>
-                <img src="./images/results.png" alt="RESULTS" class="results_logo">
-            </div>
-        </a>
+        <?php
+        if ($_SESSION['fid'] != 'COE001') {
+            echo '
+            <a href="./facculty_class.php" class="links_in_pallets">
+                <div id="result" name="result">
+                    <h1 class="result_heading">YOUR CLASSES</h1>
+                    <img src="./images/results.png" alt="RESULTS" class="results_logo">
+                </div>
+            </a>
+            ';
+        }
+        ?>
 
 
         <!-- shows all the failed students subject details -->

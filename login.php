@@ -1,8 +1,13 @@
 <?php
 session_start();       //needed here and in index.php file 
 
+
 require("configuration/auth.php");
 require("configuration/config.php");
+
+if (User::isloggedin()) {
+  header('Location: profile.php');
+}
 
 // checks if the login button has pressed
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

@@ -3,7 +3,6 @@ require("configuration/config.php");
 
 class User
 {
-
     // function for checking the credential of the student
     public static function login($con,  $usn, $email, $password)
     {
@@ -171,7 +170,8 @@ class User
             WHERE e.fid='$fid' AND
             r.usn=e.usn AND
             e.course_id=c.course_id AND
-            r.course_id=e.course_id";
+            r.course_id=e.course_id
+            ORDER BY c.course_name,e.usn";
             $query = $con->prepare($sql);
             $query->setFetchMode(PDO::FETCH_ASSOC);
             $query->execute();
@@ -192,7 +192,8 @@ class User
             WHERE r.usn='$usn' AND
             r.total_marks<40 AND
             r.sem='$sem' AND
-            c.course_id=r.course_id";
+            c.course_id=r.course_id
+            ORDER BY c.course_name";
             $query = $con->prepare($sql);
             $query->setFetchMode(PDO::FETCH_ASSOC);
             $query->execute();
@@ -212,7 +213,8 @@ class User
             FROM result r,course c
             WHERE r.usn='$usn' AND
             r.total_marks<40 AND
-            c.course_id=r.course_id";
+            c.course_id=r.course_id
+            ORDER BY c.course_name";
             $query = $con->prepare($sql);
             $query->setFetchMode(PDO::FETCH_ASSOC);
             $query->execute();
@@ -231,7 +233,7 @@ class User
             FROM result r,course c
             WHERE r.total_marks<40 AND
             c.course_id=r.course_id
-            GROUP BY r.sem";
+            ORDER BY r.sem";
             $query = $con->prepare($sql);
             $query->setFetchMode(PDO::FETCH_ASSOC);
             $query->execute();
